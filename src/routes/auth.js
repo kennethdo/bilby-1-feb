@@ -2,6 +2,7 @@ const { Router } = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { db } = require('../db');
+const authMiddleware = require('../middleware/auth');
 
 const JWT_SECRET = process.env.JWT_SECRET || 'default-secret-change-in-production';
 
@@ -44,6 +45,14 @@ router.post('/login', (req, res) => {
 
   const token = jwt.sign({ id: user.id, email: user.email }, JWT_SECRET, { expiresIn: '24h' });
   res.json({ token });
+});
+
+router.get('/me', authMiddleware, (req, res) => {
+  const user = db.prepare('SELECT id, email, created_at FROM users WHERE id = ?').get(req.user.id);
+  if (!user) {
+    return res.status(401).json({ error: 'User not found' });
+  }
+  res.json(user);
 });
 
 module.exports = router;
