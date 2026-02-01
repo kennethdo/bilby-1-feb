@@ -1,0 +1,12 @@
+# Bilby Progress Log
+
+## 2026-02-01 - BILBY-001: Fix About page technical white paper section and staff data
+- Cross-checked About page against Figma design (node 3463-1194)
+- Technical white paper section confirmed to match Figma (placeholder is intentional in design)
+- Staff data confirmed to match Figma (all rows show "Chief Technology Officer" as role in Figma too)
+- Fixed staff table header label: "Role" → "POST" with "/" separators to match Figma
+- Updated Dr Ryan Manuel bio text to match Figma (third-time founder, Rhodes Scholar)
+- Added "OUR STORY" label above the story section heading per Figma design
+- Fixed pre-existing Motion type error (ease: "easeOut" as const)
+- Files changed: components/about-page.tsx, components/motion-section.tsx
+---

@@ -1,0 +1,49 @@
+{
+  "project": "Bilby",
+  "description": "Design-to-frontend cross-check and completion against Figma design",
+  "stories": [
+    {
+      "id": "BILBY-001",
+      "title": "Fix About page technical white paper section and staff data",
+      "description": "The About page has a placeholder 'Technical white paper here' section (around line 182-192 in about-page.tsx) and all 10 staff rows show identical 'CTO' roles. Read the Figma design at https://www.figma.com/design/JeBNlyIXgrcyQ1rwyfpebB/Bilby?node-id=3463-1194 for the About page, then: 1) Replace the technical white paper placeholder with the actual design from Figma (or remove if not in design), 2) Update staff roles and names to match Figma exactly, 3) Ensure spacing, typography, and layout match the Figma design. Use the Figma MCP tool (get_design_context with fileKey JeBNlyIXgrcyQ1rwyfpebB) to read the actual design. Follow React best practices — extract reusable components if sections repeat patterns.",
+      "acceptance_criteria": [
+        "Technical white paper placeholder is replaced with actual content from Figma or removed",
+        "Staff section shows correct varied roles and names matching Figma",
+        "Typography classes match Figma design (font sizes, weights, spacing)",
+        "Layout and spacing match Figma pixel-accurate",
+        "npm run build passes without errors"
+      ],
+      "priority": 1,
+      "passes": true
+    },
+    {
+      "id": "BILBY-002",
+      "title": "Fix Scanning page features section layout and cross-check with Figma",
+      "description": "The Scanning page has an empty container with just a 'Features:' heading label that looks broken. Read the Figma design for the Scanning page using Figma MCP (get_design_context with fileKey JeBNlyIXgrcyQ1rwyfpebB), then: 1) Fix the features section layout to match Figma exactly, 2) Ensure the 3 feature cards (Wide coverage, Guaranteed capture, Expert curation) render correctly with proper spacing, 3) Cross-check all section spacing, colors, and typography against Figma. Use semantic HTML and follow React best practices.",
+      "acceptance_criteria": [
+        "Features section renders correctly without empty container",
+        "All 3 feature cards display with correct layout matching Figma",
+        "Section spacing and typography match Figma design",
+        "Responsive layout works on mobile and desktop",
+        "npm run build passes without errors"
+      ],
+      "priority": 2,
+      "passes": false
+    },
+    {
+      "id": "BILBY-003",
+      "title": "Cross-check Home and Platform pages against Figma design for visual accuracy",
+      "description": "Using Figma MCP (get_design_context with fileKey JeBNlyIXgrcyQ1rwyfpebB), cross-check the Home page and Platform page against the Figma design. Focus on: 1) Hero section typography, spacing, and button styles, 2) Section padding and margins between blocks, 3) Color values matching CSS custom properties, 4) Card layouts and grid alignment, 5) Footer navigation layout accuracy. Fix any discrepancies found. Take a browser screenshot after changes to verify visually. Follow React best practices — use cn() for conditional classes, semantic HTML, and keep components under 200 lines.",
+      "acceptance_criteria": [
+        "Home page hero section matches Figma typography and spacing",
+        "Home page section gaps and padding match Figma",
+        "Platform page capability cards match Figma layout",
+        "Color values in CSS custom properties match Figma design tokens",
+        "Footer layout matches Figma across both pages",
+        "npm run build passes without errors"
+      ],
+      "priority": 3,
+      "passes": false
+    }
+  ]
+}
