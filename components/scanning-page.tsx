@@ -56,21 +56,21 @@ const featureCards = [
   {
     title: "Wide coverage",
     body:
-      "Wide coverage of markets from Asia, Europe, the Americas, and the Middle East.",
+      "wide coverage of markets from Asia, Europe, the Americas, and the Middle East.",
     image: imgImage70,
     icon: imgGlobe1
   },
   {
     title: "Guaranteed capture",
     body:
-      "Automated AI coverage checking and SLA guarantee that we don’t miss anything.",
+      "automated AI coverage checking and SLA guarantee that we don't miss anything",
     image: imgImage71,
     icon: imgGlobe2
   },
   {
     title: "Expert curation",
     body:
-      "Curated, modelled, and written by genuine specialists (mainly professors).",
+      "curated, modelled, and written by genuine specialists (mainly professors).",
     image: imgImage72,
     icon: imgGlobe3
   }
@@ -89,17 +89,19 @@ export function ScanningPage() {
 
       <MotionSection className="relative overflow-hidden bg-surface-muted lg:h-[750px]">
         <StaggerGroup>
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 lg:hidden">
           <Image
             alt=""
             src={imgImage80}
             fill
-            className="object-cover opacity-20 lg:opacity-100 lg:static"
+            className="object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-[rgb(var(--color-surface-muted)/0.8)] lg:hidden" />
+          <div className="absolute inset-0 bg-[rgb(var(--color-surface-muted)/0.8)]" />
         </div>
-        <div className="absolute left-[10px] top-[-221px] hidden h-[1021px] w-[1647px] lg:block">
-          <Image alt="" src={imgImage80} fill className="object-cover" />
+        <div className="absolute left-[754px] top-1/2 hidden h-[620px] w-[560px] -translate-y-1/2 bg-surface-muted lg:block">
+          <div className="absolute left-1/2 top-1/2 h-[569px] w-[541px] -translate-x-1/2 -translate-y-1/2">
+            <Image alt="" src={imgImage80} fill className="object-cover" />
+          </div>
         </div>
         <div className="absolute inset-x-6 inset-y-0 hidden grid-cols-4 gap-2 lg:grid">
           <div className="border-l border-grid" />
@@ -107,16 +109,16 @@ export function ScanningPage() {
           <div className="border-l border-grid" />
           <div className="border-x border-grid" />
         </div>
-        <div className="relative mx-auto flex w-full max-w-[1232px] flex-col gap-8 px-6 py-20 lg:static lg:px-[104px] lg:py-0">
-          <div className="type-mono-xs inline-flex items-center gap-1.5 border border-brand border-b-[1px] border-l-[0.5px] border-r-[0.5px] border-t-[0.5px] px-2 pb-1.5 pt-1 text-brand lg:absolute lg:left-6 lg:top-[554px]">
-            <span className="size-[3px] rounded-[1px] bg-brand" />
-            Policy Tracking
-          </div>
-          <div className="grid gap-10 lg:absolute lg:left-6 lg:top-[594px] lg:flex lg:w-[1394px] lg:gap-2">
-            <h1 className="type-display-hero-xl font-normal lg:w-[832px]">
+        <div className="relative mx-auto flex w-full max-w-[1232px] flex-col gap-8 px-6 py-20 lg:static lg:py-0">
+          <div className="flex flex-col gap-4 lg:absolute lg:bottom-[60px] lg:left-[55px] lg:w-[662px]">
+            <div className="type-mono-xs inline-flex w-fit items-center gap-1.5 border border-brand border-b-[1.5px] border-l-[0.75px] border-r-[0.75px] border-t-[0.75px] px-2 pb-1.5 pt-1 text-brand">
+              <span className="size-[3px] rounded-[1px] bg-brand" />
+              Building Agency
+            </div>
+            <h1 className="type-display-hero-xl font-normal">
               Regulatory Intelligence, Delivered Automatically
             </h1>
-            <p className="type-body-sm leading-[1.2] lg:max-w-[280px] lg:self-end lg:py-1">
+            <p className="type-body-sm leading-[1.2] lg:w-[442px]">
               Bilby uses patented AI systems trained by real experts to scan
               regulations, policies, and government updates worldwide — then turns
               them into clear, actionable intelligence in your language, every day,
@@ -150,84 +152,87 @@ export function ScanningPage() {
         </StaggerGroup>
       </MotionSection>
 
-      <MotionSection className="bg-white py-20">
-        <StaggerGroup className="mx-auto w-full max-w-[1232px] px-6 lg:px-[104px]">
-          <div className="type-body border-l-4 border-brand pl-4 text-brand-soft">
-            Bilby gives you a tripwire product in your language that functions as a
-            continuously reporting platform, rather than a static memo. That brings
-            considerable efficiency: gets rid of barriers of expertise, language
-            and scale. You get the thing you need to give your boss about
-            regulations and policy provided to you in your language, in whatever
-            output form you wish.
-          </div>
-          <div className="mt-12 border border-brand-subtle px-5 py-8 lg:h-[616px] lg:max-w-[1084px]">
-            <div className="type-mono-22 pt-12 text-center">
-              Features:
+      <MotionSection className="bg-white overflow-clip">
+        <StaggerGroup className="mx-auto w-full max-w-[1440px] px-6 py-20 lg:px-[25px] lg:py-[83px]">
+          <div className="mx-auto lg:max-w-[1083px]">
+            <div className="type-body border-l-4 border-brand pl-4 text-brand-soft leading-[1.2]">
+              Bilby gives you a tripwire product in your language that functions as a
+              continuously reporting platform, rather than a static memo. That brings
+              considerable efficiency: gets rid of barriers of expertise, language
+              and scale. You get the thing you need to give your boss about
+              regulations and policy provided to you in your language, in whatever
+              output form you wish.
             </div>
-          <div className="mt-16 grid gap-8 lg:grid-cols-[1fr_auto_1fr_auto_1fr] lg:items-start">
-            {featureCards.map((card, index) => (
-              <Fragment key={card.title}>
-                <div className="text-center">
-                  <div className="relative mx-auto h-[294px] w-[294px]">
-                    <Image
-                      alt=""
-                      src={card.image}
-                      fill
-                      className="object-cover"
-                    />
-                    <Image
-                      alt=""
-                      src={card.icon}
-                      width={46}
-                      height={46}
-                      className="absolute left-1/2 top-2 -translate-x-1/2"
-                    />
-                  </div>
-                  <p className="type-body-14-5 mt-4">{card.body}</p>
-                </div>
-                {index < featureCards.length - 1 ? (
-                  <div className="hidden h-full items-center justify-center lg:flex">
-                    <Image
-                      alt=""
-                      src={imgVector35}
-                      width={1}
-                      height={506}
-                      className="h-[506px] w-px"
-                    />
-                  </div>
-                ) : null}
-              </Fragment>
-            ))}
           </div>
+          <div className="mx-auto mt-10 flex flex-col items-center lg:px-[18px] lg:py-[34px]">
+            <div className="relative w-full overflow-hidden border border-brand-subtle lg:h-[616px] lg:w-[1084px]">
+              <div className="type-mono-22 pt-12 text-center">
+                Features:
+              </div>
+              <div className="mt-8 grid gap-8 px-6 pb-8 lg:mt-0 lg:absolute lg:left-[10px] lg:top-[109px] lg:flex lg:gap-[35px] lg:px-[34px] lg:pb-0">
+                {featureCards.map((card, index) => (
+                  <Fragment key={card.title}>
+                    <div className="text-center lg:w-[285px]">
+                      <div className="relative mx-auto h-[294px] w-[294px]">
+                        <Image
+                          alt=""
+                          src={card.image}
+                          fill
+                          className="object-cover"
+                        />
+                        <Image
+                          alt=""
+                          src={card.icon}
+                          width={46}
+                          height={46}
+                          className="absolute left-1/2 top-[11px] -translate-x-1/2"
+                        />
+                      </div>
+                      <p className="type-body-14-5 mt-4">{card.body}</p>
+                    </div>
+                    {index < featureCards.length - 1 ? (
+                      <div className="hidden h-[506px] items-center justify-center lg:flex">
+                        <Image
+                          alt=""
+                          src={imgVector35}
+                          width={1}
+                          height={506}
+                          className="h-[506px] w-px"
+                        />
+                      </div>
+                    ) : null}
+                  </Fragment>
+                ))}
+              </div>
+            </div>
           </div>
         </StaggerGroup>
       </MotionSection>
 
-      <MotionSection className="relative overflow-hidden bg-white py-20">
+      <MotionSection className="bg-white py-[90px]">
         <StaggerGroup>
-        <div className="absolute inset-0">
-          <Image alt="" src={imgImage64} fill className="object-cover opacity-80" />
-        </div>
-        <div className="relative mx-auto max-w-4xl text-center">
-          <div className="type-body-lg">Ewan Smith</div>
-          <p className="type-display-md mt-6 leading-[1.1]">
-            We remain astounded by the speed and scope of what Bilby provides us
-            every day
-          </p>
-          <Image
-            alt=""
-            src={imgVector1}
-            width={12}
-            height={12}
-            className="absolute left-10 top-10 rotate-45"
-          />
-          <Image
-            alt=""
-            src={imgVector1}
-            width={12}
-            height={12}
-            className="absolute right-10 bottom-6 rotate-45"
-          />
+        <div className="relative mx-auto max-w-[1155px] text-center">
+          <div className="font-semibold text-brand" style={{ fontFamily: "var(--font-dm), ui-sans-serif, system-ui", fontSize: "21.7px", lineHeight: "27.94px", letterSpacing: "-0.484px" }}>Ewan Smith</div>
+          <div className="relative mt-6">
+            <p className="type-display-lg leading-[1.04]">
+              We remain astounded by the speed and scope of what Bilby provides us
+              every day
+            </p>
+            <Image
+              alt=""
+              src={imgVector1}
+              width={14}
+              height={14}
+              className="absolute left-[86px] -bottom-16 rotate-45"
+            />
+            <Image
+              alt=""
+              src={imgVector1}
+              width={14}
+              height={14}
+              className="absolute -right-[118px] -bottom-4 rotate-45"
+            />
+          </div>
         </div>
         </StaggerGroup>
       </MotionSection>
