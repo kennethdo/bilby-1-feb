@@ -1,19 +1,32 @@
 {
-  "name": "ralph-test-app",
-  "version": "1.0.0",
-  "description": "A simple Express API with JWT authentication - built by Ralph loop",
-  "main": "src/index.js",
+  "name": "bilby",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "node --watch src/index.js",
-    "test": "node --test tests/**/*.test.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "keywords": [],
-  "license": "MIT",
   "dependencies": {
-    "bcryptjs": "^3.0.3",
-    "better-sqlite3": "^12.6.2",
-    "express": "^5.2.1",
-    "jsonwebtoken": "^9.0.3"
+    "@base-ui/react": "^1.1.0",
+    "clsx": "latest",
+    "motion": "^12.26.2",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "tailwind-merge": "latest"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "autoprefixer": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "postcss": "latest",
+    "tailwindcss": "latest",
+    "typescript": "latest"
   }
 }

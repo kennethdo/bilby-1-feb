@@ -1,0 +1,32 @@
+# Ralph Sandbox - Isolated environment for autonomous Claude Code execution
+# This container provides full dev tools but CANNOT access host filesystem
+
+FROM node:22-bookworm
+
+# Install system tools Ralph might need
+RUN apt-get update && apt-get install -y \
+    git \
+    jq \
+    curl \
+    ripgrep \
+    python3 \
+    python3-pip \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Claude Code CLI
+RUN npm install -g @anthropic-ai/claude-code
+
+# Create non-root user (matches Ralph's sandbox best practice)
+RUN useradd -m -s /bin/bash ralph
+USER ralph
+WORKDIR /home/ralph/workspace
+
+# Copy project files (NOT bind mount — this is a snapshot, not live access)
+COPY --chown=ralph:ralph . /home/ralph/workspace/
+
+# Install project dependencies
+RUN npm install
+
+# Default: run ralph prompt through claude
+ENTRYPOINT ["bash"]
