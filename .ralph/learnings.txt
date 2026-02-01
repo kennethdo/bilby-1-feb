@@ -12,6 +12,8 @@
 
 - Auth middleware at src/middleware/auth.js uses the same JWT_SECRET constant as auth routes — keep them in sync
 - Middleware tests don't need database setup — use a simple test route to verify req.user attachment
+- Protected route tests need full auth flow in before() hook: register user, login to get token, then use token in Authorization header
+- The /me route is mounted under /api/auth (so full path is /api/auth/me) — keep all auth-related routes in the same router
 
 ## Gotchas
 - Express 5.x is used (not 4.x) - check for API differences if something doesn't work as expected

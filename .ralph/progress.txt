@@ -35,3 +35,11 @@
 - Tests use a minimal Express app with a protected test route (no database needed)
 - Files changed: src/middleware/auth.js, tests/middleware.test.js (6 tests, all passing, 24 total)
 ---
+
+## 2026-02-01 - RTA-005: Protected GET /api/me endpoint
+- Added GET /me route to src/routes/auth.js using authMiddleware
+- Queries database for user by req.user.id, returns id, email, created_at (no password_hash)
+- Returns 401 if no token, invalid token, or user not found
+- Tests register+login to get token, then verify authenticated access and rejection scenarios
+- Files changed: src/routes/auth.js, tests/me.test.js (4 tests, all passing, 28 total)
+---
