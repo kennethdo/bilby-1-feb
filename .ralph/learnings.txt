@@ -5,6 +5,8 @@
 - Tests use `delete require.cache[require.resolve(...)]` to get fresh module instances when needed
 - Node built-in test runner with `node:test` and `node:assert` - test files at tests/*.test.js
 - better-sqlite3 with WAL mode enabled for better concurrent read performance
+- Route tests create a minimal Express app in before() hook, mounting the router under test, and use node:http for requests (no supertest dependency needed)
+- Auth routes are in src/routes/auth.js, mounted at /api/auth — the router defines paths relative (e.g., '/register' not '/api/auth/register')
 
 ## Gotchas
 - Express 5.x is used (not 4.x) - check for API differences if something doesn't work as expected

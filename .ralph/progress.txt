@@ -9,3 +9,12 @@
 - Exports db instance and initializeDatabase function
 - Files changed: src/db.js, tests/db.test.js (6 tests, all passing)
 ---
+
+## 2026-02-01 - RTA-002: User registration endpoint
+- Created src/routes/auth.js with POST /register endpoint
+- Accepts JSON body with email and password, validates both present
+- Hashes password with bcryptjs (salt rounds: 10) before storing
+- Returns 201 with { id, email } on success, 400 for missing fields or duplicate email
+- Tests use minimal Express app with http client (no external test deps)
+- Files changed: src/routes/auth.js, tests/auth.test.js (6 tests, all passing)
+---
