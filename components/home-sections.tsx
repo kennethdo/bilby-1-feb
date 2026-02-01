@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Accordion } from "@base-ui/react";
 import { motion, useReducedMotion } from "motion/react";
+import { Add, ArrowForward, AccountBalance, Payments } from "@material-symbols-svg/react/w200";
 
 import { cn } from "@/lib/utils";
 import { SiteHeader } from "@/components/site-header";
@@ -11,48 +12,48 @@ import { mainNavItems } from "@/components/nav-data";
 import heroImgGlobe from "@/hero-img-2.png";
 
 const imgHighlights =
-  "https://www.figma.com/api/mcp/asset/75439da3-b380-4f90-9d6b-7adada5e2f0e";
+  "/images/639d17f6-f04b-4840-8fc0-b3e1700d8407.png";
 const imgHighlightIcon =
-  "https://www.figma.com/api/mcp/asset/f4b0acd9-bb01-4540-8c96-00224443781a";
+  "/images/3fc23e58-83ad-46e6-b71b-53b90cdc2191.svg";
 const imgFrame1000003036 =
-  "https://www.figma.com/api/mcp/asset/ad5c6e62-1e19-4642-b533-dad064529f0d";
+  "/images/a7bfd7f9-5959-4e67-b1d0-37dfcb62be86.svg";
 const imgContentImage =
-  "https://www.figma.com/api/mcp/asset/bbd85f75-9c67-4ecd-85ea-6d33df81ae3a";
+  "/images/de584695-fcc6-4bc2-a00f-dc67cd6eab71.png";
 const imgContentImage1 =
-  "https://www.figma.com/api/mcp/asset/97862f56-31ef-4d92-a5ad-1d7e8a376a3a";
+  "/images/06fdc944-4643-4369-9cbb-d497497c775a.png";
 const imgContentImage2 =
-  "https://www.figma.com/api/mcp/asset/1a6fd65d-6f07-4ff2-bc58-38ecd6c5e136";
+  "/images/663b8872-2fac-4ea1-bc37-d8bbec27b13d.png";
 const imgFooterImage =
-  "https://www.figma.com/api/mcp/asset/eb70f7d8-0eff-471b-8ce8-7ae4c94cabdb";
+  "/images/b817c8e3-d31b-4626-a781-d4784c4c5feb.png";
 const imgFooterBackgroundImage =
-  "https://www.figma.com/api/mcp/asset/4e417558-a4f1-493d-985b-c3af12bf9984";
+  "/images/5d0178f3-085b-4048-9a3d-d98140db4fbe.png";
 const imgFooterVector =
-  "https://www.figma.com/api/mcp/asset/56e52db4-fc93-45d2-aa50-5783a7593201";
+  "/images/d79e1d99-7277-45d2-95fb-61b6b065ed0c.svg";
 const imgCardCornerLeft =
-  "https://www.figma.com/api/mcp/asset/3b85a16d-f667-4240-b452-20b918d5c2f5";
+  "/images/36c05905-8b7b-45ce-9e8c-c4afbe414033.svg";
 const imgCardCornerRight =
-  "https://www.figma.com/api/mcp/asset/7e9510d3-6198-43a1-b997-4255a88dfb4b";
+  "/images/7f49d8d8-671a-40b2-ba6a-cfaee77e228c.svg";
 const imgLogo =
-  "https://www.figma.com/api/mcp/asset/a6a911c6-175d-4892-9f60-bf35e173e70b";
+  "/images/52e09870-c954-44d7-9261-71ad8b36269d.svg";
 const imgSocialLinkedIn =
-  "https://www.figma.com/api/mcp/asset/cfac3666-8d4f-47e8-b11e-bb787213e926";
+  "/images/bd5bd585-5e35-4784-8003-cda38372ff1f.svg";
 const imgSocialX =
-  "https://www.figma.com/api/mcp/asset/d49bd455-7deb-4aa9-83cb-8ac6fb94f1ec";
+  "/images/aebe7771-4100-41fc-addf-779ff6b74dcc.svg";
 
 const springHover =
   "spring-transform transition-opacity duration-150 ease-out hover:-translate-y-0.5";
 const imgSocialYoutube =
-  "https://www.figma.com/api/mcp/asset/d7c2a7d2-7d83-44b7-9595-ee42339fe79d";
+  "/images/6b499a14-7e23-4067-8fba-af02698ca362.svg";
 const imgSocialInstagram =
-  "https://www.figma.com/api/mcp/asset/ee9fcc46-76ff-4f98-bf50-599b16f5aa06";
+  "/images/9f35e34b-eb94-4ebc-9be8-8c26422e6573.svg";
 const imgSocialGithub =
-  "https://www.figma.com/api/mcp/asset/cac613fb-0e3e-4e12-a748-0ea5e4418e03";
+  "/images/632df740-b6b6-4b2c-8da2-e021eb8969e0.svg";
 const imgMoneyIcon =
-  "https://www.figma.com/api/mcp/asset/c8ae61db-720b-4afe-b303-a88f00991089";
+  "/images/c39a115c-2209-434d-8c02-babc6c2cc3dd.svg";
 const imgInfraIcon =
-  "https://www.figma.com/api/mcp/asset/e711ccd4-6956-4f17-8171-3b93f4256ea3";
+  "/images/e72d1a9d-153a-4941-9272-37aa397f89c4.svg";
 const imgFinanceIcon =
-  "https://www.figma.com/api/mcp/asset/2768127e-64c4-4cf7-b9e7-a84aa901c7c1";
+  "/images/663eee44-8f3e-44f1-b572-85b9639ba403.svg";
 
 const navItems = mainNavItems;
 
@@ -68,12 +69,12 @@ const bigButtons = [
   {
     label: "Government",
     title: "AI OS for Governments",
-    icon: imgFinanceIcon
+    Icon: AccountBalance
   },
   {
     label: "Government",
     title: "AI OS for Governments",
-    icon: imgMoneyIcon
+    Icon: Payments
   }
 ];
 
@@ -238,7 +239,7 @@ export function HeroSection() {
               </a>
               <a
                 className={cn(
-                  "type-mono-xs rounded-[1000px] bg-[rgb(var(--color-grid))] px-[18px] py-3 text-inverse",
+                  "type-mono-xs rounded-[1000px] bg-brand px-[18px] py-3 text-inverse",
                   springHover,
                   "hover:opacity-80"
                 )}
@@ -281,7 +282,7 @@ export function HeroSection() {
                 </a>
                 <a
                   className={cn(
-                    "type-mono-xs rounded-[1000px] bg-[rgb(var(--color-grid))] px-[18px] py-3 text-inverse",
+                    "type-mono-xs rounded-[1000px] bg-brand px-[18px] py-3 text-inverse",
                     springHover,
                     "hover:opacity-80"
                   )}
@@ -307,16 +308,10 @@ export function HeroSection() {
             <p className="type-body-15 max-w-[200px] leading-[1.2]">
               {item.title}
             </p>
-            <Image
-              alt=""
-              src={item.icon}
-              width={index === 0 ? 25 : 21}
-              height={index === 0 ? 25 : 21}
-              className="absolute right-6 top-7"
-            />
+            <item.Icon className="absolute right-6 top-7 size-6 text-brand" />
           </article>
         ))}
-        <article className="flex w-[452px] shrink-0 flex-col gap-20 rounded-lg bg-[rgb(var(--color-grid))] px-6 py-7 text-inverse">
+        <article className="flex w-[452px] shrink-0 flex-col gap-20 rounded-lg bg-brand px-6 py-7 text-inverse">
           <p className="type-body-sm font-medium uppercase leading-[1.2]">
             {bigButtonCta.label}
           </p>
@@ -530,12 +525,10 @@ export function PillarsSection() {
                     <Accordion.Header>
                       <Accordion.Trigger className="type-display-22 group flex w-full items-center justify-between text-left text-brand-strong spring-transform transition-opacity duration-150 ease-out hover:-translate-x-0.5 hover:opacity-90">
                         {item.title}
-                        <span
+                        <Add
                           aria-hidden
-                          className="type-body-lg ml-4 text-brand-strong transition-transform duration-150 ease-out group-data-[state=open]:rotate-45"
-                        >
-                          +
-                        </span>
+                          className="ml-4 size-5 text-brand-strong transition-transform duration-150 ease-out group-data-[state=open]:rotate-45"
+                        />
                       </Accordion.Trigger>
                     </Accordion.Header>
                     <Accordion.Panel className="type-body pt-3 leading-[1.6] text-brand-muted">
@@ -553,7 +546,7 @@ export function PillarsSection() {
               )}
               href="#"
             >
-              Learn more →
+              Learn more <ArrowForward className="ml-1.5 inline-block size-4" />
             </a>
           </motion.div>
           <motion.div

@@ -1,5 +1,6 @@
 # Ralph Sandbox - Isolated environment for autonomous Claude Code execution
-# This container provides full dev tools but CANNOT access host filesystem
+# Uses bind mount at runtime so changes persist to host project directory
+# But container CANNOT access anything outside the mounted workspace
 
 FROM node:22-bookworm
 
@@ -17,16 +18,19 @@ RUN apt-get update && apt-get install -y \
 # Install Claude Code CLI
 RUN npm install -g @anthropic-ai/claude-code
 
-# Create non-root user (matches Ralph's sandbox best practice)
+# Create non-root user
 RUN useradd -m -s /bin/bash ralph
+
+# Install ralph CLI from plugin cache pattern
+# The ralph binary will be bind-mounted or we copy a standalone version
+COPY --chown=ralph:ralph .local/bin/ralph-docker /home/ralph/.local/bin/ralph
+RUN chmod +x /home/ralph/.local/bin/ralph || true
+
+# Set up PATH for ralph
+ENV PATH="/home/ralph/.local/bin:${PATH}"
+
 USER ralph
 WORKDIR /home/ralph/workspace
 
-# Copy project files (NOT bind mount — this is a snapshot, not live access)
-COPY --chown=ralph:ralph . /home/ralph/workspace/
-
-# Install project dependencies
-RUN npm install
-
-# Default: run ralph prompt through claude
+# Dependencies installed at runtime via ralph-safe.sh (since workspace is bind-mounted)
 ENTRYPOINT ["bash"]

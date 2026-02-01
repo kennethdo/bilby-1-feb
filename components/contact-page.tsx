@@ -5,27 +5,27 @@ import { SiteHeader } from "@/components/site-header";
 import { MotionSection, StaggerGroup } from "@/components/motion-section";
 
 const imgImage87 =
-  "https://www.figma.com/api/mcp/asset/60beb769-6266-47b1-a593-3a8518e945ce";
+  "/images/68eb3c09-e865-4a96-8aec-1161b2a8b58e.png";
 const imgImage70 =
-  "https://www.figma.com/api/mcp/asset/23b5dc5e-91bb-48dc-b772-e743a0528058";
+  "/images/e6155f21-95f9-4a22-a051-a43773b7e1c6.png";
 const imgImage71 =
-  "https://www.figma.com/api/mcp/asset/ad327266-19fd-4ab3-8848-512b461b1e5e";
+  "/images/0a0910b3-36ef-4bfc-926f-9fd6227f4323.png";
 const imgImage72 =
-  "https://www.figma.com/api/mcp/asset/04b21005-97db-4436-b839-6db8304cf2f8";
+  "/images/601f00a9-e7c5-4c86-89f1-39c3ce8b4b08.png";
 const imgLogo =
-  "https://www.figma.com/api/mcp/asset/844ad919-6ee0-4d5b-ae4e-f4e7ad9cab8e";
+  "/images/6e2db4b3-97b3-4cca-96fb-7247f351965d.svg";
 const imgFrame1000003036 =
-  "https://www.figma.com/api/mcp/asset/44a14399-2a06-4e2c-b653-fb0e3fe11c0a";
+  "/images/f7f9d860-7413-465b-a1a4-fbb795ab9467.svg";
 const imgSocialLinkedIn =
-  "https://www.figma.com/api/mcp/asset/08733609-823d-4df3-920e-ef17589670bb";
+  "/images/f3ecaebd-6e20-45bf-a8da-4efb22f5be75.svg";
 const imgSocialX =
-  "https://www.figma.com/api/mcp/asset/19aa1068-d738-41db-ae0b-c25e3ece2270";
+  "/images/f03e6f82-7350-4c2b-b9e9-880cc5e9ab07.svg";
 const imgSocialYoutube =
-  "https://www.figma.com/api/mcp/asset/4ae56a0a-f8c1-4c67-aaad-d7625dcc5049";
+  "/images/3c45554e-ff6e-4a93-94fa-49fce0695f11.svg";
 const imgSocialInstagram =
-  "https://www.figma.com/api/mcp/asset/8d586a7c-16e6-4cac-b818-90bd0c2bc613";
+  "/images/b4ce07aa-8739-44e3-9e0c-c6738ff0f17e.svg";
 const imgSocialGithub =
-  "https://www.figma.com/api/mcp/asset/d5e46145-2ab9-410c-9a6b-d94865f1f46b";
+  "/images/07478871-4e0d-4c6d-a1cb-c0b42a90d1e5.svg";
 
 const socialItems = [
   { label: "LinkedIn", icon: imgSocialLinkedIn, href: "#" },
@@ -33,27 +33,6 @@ const socialItems = [
   { label: "YouTube", icon: imgSocialYoutube, href: "#" },
   { label: "Instagram", icon: imgSocialInstagram, href: "#" },
   { label: "GitHub", icon: imgSocialGithub, href: "#" }
-];
-
-const steps = [
-  {
-    number: "1",
-    title: "Initial Consultation (5 min)",
-    body: "Immediate response with relevant materials and industry-specific case studies",
-    image: imgImage70
-  },
-  {
-    number: "2",
-    title: "Expert Discussion (24h)",
-    body: "Detailed conversation with our specialists about your specific requirements",
-    image: imgImage71
-  },
-  {
-    number: "3",
-    title: "Custom Demonstration (48h)",
-    body: "Tailored demo showcasing solutions relevant to your industry and use cases",
-    image: imgImage72
-  }
 ];
 
 export function ContactPage() {
@@ -90,37 +69,6 @@ export function ContactPage() {
             </p>
           </div>
         </div>
-        </StaggerGroup>
-      </MotionSection>
-
-      <MotionSection className="border border-soft bg-surface-muted py-24">
-        <StaggerGroup className="mx-auto w-full max-w-6xl px-6 lg:px-10">
-          <p className="type-mono-xs text-brand-rose">
-            What to Expect
-          </p>
-          <div className="mt-8 grid gap-4 lg:grid-cols-3">
-            {steps.map((step) => (
-              <div
-                key={step.number}
-                className="border border-brand-subtle bg-surface-light p-6 text-center"
-              >
-                <div className="type-mono-64-tight">
-                  {step.number}
-                </div>
-                <Image
-                  alt=""
-                  src={step.image}
-                  width={294}
-                  height={294}
-                  className="mx-auto h-[240px] w-[240px] object-cover lg:h-[250px] lg:w-[250px]"
-                />
-                <p className="type-body mt-4 uppercase">
-                  {step.title}
-                </p>
-                <p className="type-body-sm mt-2">{step.body}</p>
-              </div>
-            ))}
-          </div>
         </StaggerGroup>
       </MotionSection>
 

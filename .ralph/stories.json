@@ -1,49 +1,61 @@
 {
   "project": "Bilby",
-  "description": "Design-to-frontend cross-check and completion against Figma design",
+  "description": "Cross-check frontend implementation against Figma design specs stored in .ralph/figma-reference/",
   "stories": [
     {
-      "id": "BILBY-001",
-      "title": "Fix About page technical white paper section and staff data",
-      "description": "The About page has a placeholder 'Technical white paper here' section (around line 182-192 in about-page.tsx) and all 10 staff rows show identical 'CTO' roles. Read the Figma design at https://www.figma.com/design/JeBNlyIXgrcyQ1rwyfpebB/Bilby?node-id=3463-1194 for the About page, then: 1) Replace the technical white paper placeholder with the actual design from Figma (or remove if not in design), 2) Update staff roles and names to match Figma exactly, 3) Ensure spacing, typography, and layout match the Figma design. Use the Figma MCP tool (get_design_context with fileKey JeBNlyIXgrcyQ1rwyfpebB) to read the actual design. Follow React best practices — extract reusable components if sections repeat patterns.",
+      "id": "BILBY-CHECK-001",
+      "title": "Cross-check Home page against Figma design specs",
+      "description": "Compare components/home-sections.tsx against .ralph/figma-reference/home.tsx design specs. Check: 1) Hero section: title 'Bilby is the AI OS of government' should be Work Sans 56px tracking -3.92px color #84181f, chip says 'AI-POWERED', description box has backdrop-blur and border #ead5d6, two CTA buttons 2) Big Buttons: 3 cards (2 white 357px + 1 navy #254583 452px rounded-8px), icons should be Finance/Money/KubernetesIpAddress Streamline Carbon 3) Highlights: stats 4.3M/38+/80x/20+ in PP Fraktion Mono Thin 74px, title 'Trusted by Government Agencies...' Work Sans 44px 4) Banner: PP Fraktion Mono 18.938px uppercase 5) Content section: 3 content blocks with white cards (border #ead5d6) + 608x452 images 6) Footer: 'The Pillars' Work Sans 48px, 4 links Work Sans 24px 7) Footer nav: large Bilby logo, PP Fraktion Mono nav columns. Report all discrepancies found with specific line numbers and what needs to change. Do NOT use Figma MCP - all specs are in .ralph/figma-reference/home.tsx.",
       "acceptance_criteria": [
-        "Technical white paper placeholder is replaced with actual content from Figma or removed",
-        "Staff section shows correct varied roles and names matching Figma",
-        "Typography classes match Figma design (font sizes, weights, spacing)",
-        "Layout and spacing match Figma pixel-accurate",
-        "npm run build passes without errors"
+        "All typography discrepancies documented with line numbers",
+        "All color discrepancies documented",
+        "All spacing/layout discrepancies documented",
+        "All text content differences documented",
+        "Report saved to .ralph/figma-reference/check-home.md",
+        "npm run build passes"
       ],
-      "priority": 1,
-      "passes": true
+      "passes": false,
+      "priority": 1
     },
     {
-      "id": "BILBY-002",
-      "title": "Fix Scanning page features section layout and cross-check with Figma",
-      "description": "The Scanning page has an empty container with just a 'Features:' heading label that looks broken. Read the Figma design for the Scanning page using Figma MCP (get_design_context with fileKey JeBNlyIXgrcyQ1rwyfpebB), then: 1) Fix the features section layout to match Figma exactly, 2) Ensure the 3 feature cards (Wide coverage, Guaranteed capture, Expert curation) render correctly with proper spacing, 3) Cross-check all section spacing, colors, and typography against Figma. Use semantic HTML and follow React best practices.",
+      "id": "BILBY-CHECK-002",
+      "title": "Cross-check API and Scanning pages against Figma design specs",
+      "description": "Compare components/api-page.tsx against .ralph/figma-reference/api.tsx AND components/scanning-page.tsx against .ralph/figma-reference/scanning.tsx. For API page check: 1) Top banner bg-[#792323] with link text 2) Hero title Work Sans 64px 'Bilby is the world's best source...' 3) Dark section bg-[#792323] h-721px with quote blocks (white left border 3px) 4) Data sources: 3 cards 'Official government sources', 'Newspapers', 'Reports from Ministries' in border container 5) ML Pipeline section with sentiment scores 6) APCO testimonial. For Scanning page check: 1) Hero 'Regulatory Intelligence, Delivered Automatically' Work Sans 64px 2) FAQ section 'Why rely on manual monitoring in 2025?' Work Sans 56px 3) Features: 3 cards with globe icons 4) Ewan Smith testimonial Work Sans 44px. Report all discrepancies. Do NOT use Figma MCP.",
       "acceptance_criteria": [
-        "Features section renders correctly without empty container",
-        "All 3 feature cards display with correct layout matching Figma",
-        "Section spacing and typography match Figma design",
-        "Responsive layout works on mobile and desktop",
-        "npm run build passes without errors"
+        "API page discrepancies documented with line numbers",
+        "Scanning page discrepancies documented with line numbers",
+        "Report saved to .ralph/figma-reference/check-api-scanning.md",
+        "npm run build passes"
       ],
-      "priority": 2,
-      "passes": true
+      "passes": false,
+      "priority": 2
     },
     {
-      "id": "BILBY-003",
-      "title": "Cross-check Home and Platform pages against Figma design for visual accuracy",
-      "description": "Using Figma MCP (get_design_context with fileKey JeBNlyIXgrcyQ1rwyfpebB), cross-check the Home page and Platform page against the Figma design. Focus on: 1) Hero section typography, spacing, and button styles, 2) Section padding and margins between blocks, 3) Color values matching CSS custom properties, 4) Card layouts and grid alignment, 5) Footer navigation layout accuracy. Fix any discrepancies found. Take a browser screenshot after changes to verify visually. Follow React best practices — use cn() for conditional classes, semantic HTML, and keep components under 200 lines.",
+      "id": "BILBY-CHECK-003",
+      "title": "Cross-check Platform and About pages against Figma design specs",
+      "description": "Compare components/platform-page.tsx against .ralph/figma-reference/platform.tsx AND components/about-page.tsx against .ralph/figma-reference/about.tsx. For Platform: 1) Hero 'Making government work better' Work Sans 64px 2) AI platform section bg-[#f0f4f8] with left title + right description 3) Capabilities: bg-[#792323] h-780px with 5 cards (Core Analysis, Automated Analysis, Generative AI, Specialised Modules, Data Enrichment) using Streamline Carbon icons 28px 4) Impact section: 4 image cards 453x598 in 2x2 grid 5) Testimonial 'You have absolutely no idea...' Jeremy Page. For About: check all sections against about.tsx specs. Report all discrepancies. Do NOT use Figma MCP.",
       "acceptance_criteria": [
-        "Home page hero section matches Figma typography and spacing",
-        "Home page section gaps and padding match Figma",
-        "Platform page capability cards match Figma layout",
-        "Color values in CSS custom properties match Figma design tokens",
-        "Footer layout matches Figma across both pages",
-        "npm run build passes without errors"
+        "Platform page discrepancies documented",
+        "About page discrepancies documented",
+        "Report saved to .ralph/figma-reference/check-platform-about.md",
+        "npm run build passes"
       ],
-      "priority": 3,
-      "passes": true
+      "passes": false,
+      "priority": 3
+    },
+    {
+      "id": "BILBY-CHECK-004",
+      "title": "Cross-check Japan, GCC, and Contact pages against Figma design specs",
+      "description": "Compare components/bilby-japan-page.tsx against .ralph/figma-reference/japan.tsx, components/bilby-gcc-page.tsx against .ralph/figma-reference/gcc.tsx, and components/contact-page.tsx against .ralph/figma-reference/contact.tsx. For Japan: check Japanese text content, Noto Sans JP fonts, bg-[#f0f4f8], overlapping card layout, 'Bilbyとともに。' CTA. For GCC: check Arabic RTL text, Noto Sans Arabic fonts, bg-[#f0f4f8], dark section bg-[#792323] h-651px, Islamic geometric image, 3 benefit blocks. For Contact: check hero title, 3 step cards (1/2/3), form section with labels in PP Fraktion Mono, glass-effect sidebar cards. Report all discrepancies. Do NOT use Figma MCP.",
+      "acceptance_criteria": [
+        "Japan page discrepancies documented",
+        "GCC page discrepancies documented",
+        "Contact page discrepancies documented",
+        "Report saved to .ralph/figma-reference/check-japan-gcc-contact.md",
+        "npm run build passes"
+      ],
+      "passes": false,
+      "priority": 4
     }
   ]
 }

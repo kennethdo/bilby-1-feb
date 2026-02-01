@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.1.0",
+    "@material-symbols-svg/react": "^0.1.19",
     "clsx": "latest",
     "motion": "^12.26.2",
     "next": "latest",

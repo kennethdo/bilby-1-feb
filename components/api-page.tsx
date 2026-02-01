@@ -1,42 +1,43 @@
 import Image from "next/image";
 import { Fragment } from "react";
+import { ArrowForward } from "@material-symbols-svg/react/w200";
 
 import { mainNavItems } from "@/components/nav-data";
 import { SiteHeader } from "@/components/site-header";
 import { MotionSection, StaggerGroup } from "@/components/motion-section";
 
 const imgImage74 =
-  "https://www.figma.com/api/mcp/asset/ef218d38-ced6-4841-8096-497cf3d4623c";
+  "/images/c225e380-036f-45fa-a4c0-7b3f6ef8ec08.png";
 const imgImage70 =
-  "https://www.figma.com/api/mcp/asset/39784f42-1dc4-433b-a561-f3cd7953ec35";
+  "/images/283877e0-f40f-48e8-873d-543f98af2805.png";
 const imgImage71 =
-  "https://www.figma.com/api/mcp/asset/8065a70a-483a-43a1-a0f2-6bd5f0b2594b";
+  "/images/4a65e711-0c35-4cb4-8a07-c396f753b2fd.png";
 const imgImage72 =
-  "https://www.figma.com/api/mcp/asset/2aef9430-7ea6-4ab2-b1a2-fd86d3e6cc36";
+  "/images/574b3c93-0cc9-4eca-8ca4-81c6a2616a99.png";
 const imgImage64 =
-  "https://www.figma.com/api/mcp/asset/fd633419-4472-461b-915a-8c41a5d52547";
+  "/images/6d7c137d-5427-44ca-84ef-379edd30d201.png";
 const imgLogo =
-  "https://www.figma.com/api/mcp/asset/765b466b-76b9-4c26-99ba-d1be572ed274";
+  "/images/b1dbab26-152b-49de-ac27-031f6e000f54.svg";
 const imgFrame1000003036 =
-  "https://www.figma.com/api/mcp/asset/e085d316-7dab-432f-a1a1-3a05b2694aa9";
+  "/images/28916180-53d0-4638-a846-286663537ec5.svg";
 const imgSocialLinkedIn =
-  "https://www.figma.com/api/mcp/asset/a7227c17-0513-4de7-b8b9-dd19332c6537";
+  "/images/4374f9b5-1d9e-44a8-b081-095895078451.svg";
 const imgSocialX =
-  "https://www.figma.com/api/mcp/asset/b507546a-1f1d-4ba6-997d-31f3fc0d47dc";
+  "/images/e224db60-16be-434c-b8a0-157281dd644e.svg";
 const imgSocialYoutube =
-  "https://www.figma.com/api/mcp/asset/cc1a3f2b-057d-492b-ae17-9428905bbfea";
+  "/images/f6461b13-87fa-4030-a5b1-18cba424c36e.svg";
 const imgSocialInstagram =
-  "https://www.figma.com/api/mcp/asset/af9c349d-1616-4ced-9267-39c104bc5984";
+  "/images/297195da-c6fc-4ba9-82d3-c42eeb393e53.svg";
 const imgSocialGithub =
-  "https://www.figma.com/api/mcp/asset/b3535002-0ad9-4623-9ba9-c9a466996abb";
+  "/images/857f5a37-e785-4a65-8b5d-88ebdd21e617.svg";
 const imgFrame1000002931 =
-  "https://www.figma.com/api/mcp/asset/37945c5c-ce05-4c2a-ac8f-ad43b1a18b28";
+  "/images/e20088b6-e8ab-4649-b019-b8d52fe5c0b8.svg";
 const imgVector35 =
-  "https://www.figma.com/api/mcp/asset/818e3e08-7fd8-4dce-b7cd-3f265f792ad1";
+  "/images/f8682abd-ba73-45a6-aad3-321798892d57.svg";
 const imgVector =
-  "https://www.figma.com/api/mcp/asset/ac65e5c0-a53f-4888-9e98-4c4b79c40c06";
+  "/images/3abfe70d-d3d6-47a2-ad04-52c40e5d53e6.svg";
 const imgVector1 =
-  "https://www.figma.com/api/mcp/asset/3cd4e610-994e-43cb-b9a0-5f2e779495c5";
+  "/images/99c72d0f-6fbd-423d-b9da-e158065b6643.svg";
 
 const socialItems = [
   { label: "LinkedIn", icon: imgSocialLinkedIn, href: "#" },
@@ -177,7 +178,7 @@ export function ApiPage() {
                     {item.title}
                   </div>
                   <button className="type-mono-10-2 border border-muted px-5 py-2.5">
-                    Learn more →
+                    Learn more <ArrowForward className="ml-1 inline-block size-3.5" />
                   </button>
                 </div>
                 {index < sources.length - 1 ? (

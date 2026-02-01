@@ -1,31 +1,36 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
+import { Article, Forum, Campaign, Lightbulb } from "@material-symbols-svg/react/w200";
 
 import { aboutNavItems } from "@/components/nav-data";
 import { SiteHeader } from "@/components/site-header";
 import { StaggerGroup } from "@/components/motion-section";
 
+const imgNicolasLePallec =
+  "/images/f720ffcc-303c-4011-bd9e-90d5ae55a925.png";
+
 const imgImage94 =
-  "https://www.figma.com/api/mcp/asset/8901d988-0d16-4fd1-b22e-f71e99559a27";
-const imgImage85 =
-  "https://www.figma.com/api/mcp/asset/e728b899-ab82-494c-a84a-b14a5c3f2886";
+  "/images/4f018b6c-3ed8-4f55-9c56-0d4e9f323480.png";
 const imgImage54 =
-  "https://www.figma.com/api/mcp/asset/e8881b6b-96d9-4d94-98d8-2944be5a799a";
+  "/images/dbf7542b-43cc-4adc-9421-8633cf96b1ed.png";
 const imgLogo =
-  "https://www.figma.com/api/mcp/asset/f17bc58d-ee2d-4536-9187-b4b24c66bb42";
+  "/images/2cde171c-b7a5-4670-98d6-a595ab8f6856.svg";
 const imgFrame1000003036 =
-  "https://www.figma.com/api/mcp/asset/89cb49a5-88dd-43fc-b1db-340d09dda8ee";
+  "/images/6bda768e-f4a3-4808-b689-6a2d3ee8863f.svg";
 const imgSocialLinkedIn =
-  "https://www.figma.com/api/mcp/asset/20b0570e-94e4-4c3c-ab30-8777a5117611";
+  "/images/1c006981-7e75-4469-89c8-6f7f76054a66.svg";
 const imgSocialX =
-  "https://www.figma.com/api/mcp/asset/bcd903a8-1be1-403b-9dac-7853960abcd9";
+  "/images/ee062747-895b-4d60-b48f-04f0ad3243d7.svg";
 const imgSocialYoutube =
-  "https://www.figma.com/api/mcp/asset/f248d417-479a-4819-9d49-6bea55e6373d";
+  "/images/0627cb86-fdda-4924-a5a7-9a277601673f.svg";
 const imgSocialInstagram =
-  "https://www.figma.com/api/mcp/asset/a8d214b0-59fa-40c7-953b-64bbb91e51a8";
+  "/images/1cbcfbea-6b96-40ea-8e30-fc365bdad163.svg";
 const imgSocialGithub =
-  "https://www.figma.com/api/mcp/asset/251809b3-e349-4847-aa59-6a07331505a1";
+  "/images/101ed8f7-e983-43b0-983f-cea390d15a80.svg";
 const imgLogoMark =
-  "https://www.figma.com/api/mcp/asset/6d000397-6a2d-4bfa-81e8-33120de5b58a";
+  "/images/679e7fab-03c1-4eac-bd10-7454330705e1.svg";
 
 const socialItems = [
   { label: "LinkedIn", icon: imgSocialLinkedIn, href: "#" },
@@ -35,17 +40,103 @@ const socialItems = [
   { label: "GitHub", icon: imgSocialGithub, href: "#" }
 ];
 
-const staffRows = [
-  { role: "Chief Technology Officer", name: "Dr. Steve Enright-Ward" },
-  { role: "Chief Technology Officer", name: "Dr. Anya Sharma, PhD" },
-  { role: "Chief Technology Officer", name: "Data Innovation Lead" },
-  { role: "Chief Technology Officer", name: "Lead Systems Engineer" },
-  { role: "Chief Technology Officer", name: "Global Sales Director" },
-  { role: "Chief Technology Officer", name: "Marketing Lead" },
-  { role: "Chief Technology Officer", name: "Community Outreach" },
-  { role: "Chief Technology Officer", name: "Budget Management" },
-  { role: "Chief Technology Officer", name: "Risk Management" },
-  { role: "Chief Technology Officer", name: "Recruiting Manager" }
+const staffMembers = [
+  {
+    name: "Dr. Ryan Manuel",
+    role: "CEO & Founder",
+    photo: "/images/staff/ryan-manuel.png",
+    description: "More than 20 years industry experience; a third-time founder who previously taught at Oxford, Australian National and Hong Kong universities, and worked for BCG and the Australian government. Holds a doctorate from Oxford, where he was a Rhodes Scholar."
+  },
+  {
+    name: "Dr. Steve Enright-Ward",
+    role: "Chief Technology Officer",
+    photo: "/images/staff/stephen-enrightward.jpg",
+    description: "Leads Bilby's technology strategy and engineering teams. Brings deep expertise in AI systems architecture, scalable data pipelines, and building production ML platforms for government intelligence."
+  },
+  {
+    name: "Simon Cartledge",
+    role: "Head of Research",
+    photo: "/images/staff/simon-cartledge.png",
+    description: "Directs Bilby's research programme, overseeing policy analysis methodology and knowledge graph development. Background in political economy and Asian government systems."
+  },
+  {
+    name: "Nicolas Le Pallec",
+    role: "Head of Engineering",
+    photo: imgNicolasLePallec,
+    description: "Oversees platform engineering and infrastructure, ensuring Bilby's systems deliver reliable, high-performance intelligence at scale across global deployments."
+  },
+  {
+    name: "David Lee",
+    role: "Senior ML Research Engineer",
+    photo: "/images/staff/david-lee.png",
+    description: "Develops and optimises Bilby's core machine learning models for document classification, sentiment analysis, and policy maturity scoring across multilingual datasets."
+  },
+  {
+    name: "Jeremy Thompson",
+    role: "Research Analyst",
+    photo: "/images/staff/jeremy-thompson.png",
+    description: "Conducts policy research and analysis, contributing to Bilby's intelligence products with expertise in regulatory landscapes and government activity monitoring."
+  },
+  {
+    name: "Carlo Taleon",
+    role: "Software Engineer",
+    photo: "/images/staff/carlo-taleon.jpeg",
+    description: "Builds and maintains Bilby's web platforms and API services, working across the full stack to deliver intuitive interfaces for complex intelligence data."
+  },
+  {
+    name: "Damian Cox",
+    role: "Solutions Architect",
+    photo: "/images/staff/damian-cox.png",
+    description: "Designs and implements client-facing deployment architectures, ensuring Bilby's platforms integrate seamlessly with enterprise and government infrastructure."
+  },
+  {
+    name: "Harvey Wen",
+    role: "Data Scientist",
+    photo: "/images/staff/harvey-wen.jpg",
+    description: "Applies statistical modelling and data analysis to extract actionable signals from government activity data, supporting Bilby's quantitative intelligence products."
+  },
+  {
+    name: "Hugh Daly",
+    role: "AI & Data Engineering",
+    photo: "/images/staff/hugh-daly.jpeg",
+    description: "Builds data pipelines and AI infrastructure that power Bilby's automated scanning and analysis of global government and regulatory sources."
+  },
+  {
+    name: "Marco Law",
+    role: "Business Development",
+    photo: "/images/staff/marco-law.png",
+    description: "Drives Bilby's commercial growth across Asia-Pacific markets, building relationships with government agencies and enterprise clients."
+  },
+  {
+    name: "Nik Takano",
+    role: "Product Design Lead",
+    photo: "/images/staff/nik-takano.png",
+    description: "Shapes the user experience of Bilby's platforms, translating complex intelligence workflows into clear, actionable interfaces for analysts and decision-makers."
+  },
+  {
+    name: "Pallav Bakshi",
+    role: "Infrastructure Engineer",
+    photo: "/images/staff/pallav-bakshi.png",
+    description: "Manages Bilby's cloud infrastructure and DevOps practices, ensuring high availability, security, and performance across production environments."
+  },
+  {
+    name: "Sam Davenport",
+    role: "ML & Quantitative Research",
+    photo: "/images/staff/sam-davenport.jpg",
+    description: "Develops quantitative models and machine learning systems for Bilby's API products, turning government activity data into structured signals for investors and analysts."
+  },
+  {
+    name: "Satyadev Sarma",
+    role: "Head of Data",
+    photo: "/images/staff/satya.jpg",
+    description: "Leads data strategy and governance, ensuring Bilby's datasets maintain completeness, accuracy, and timeliness across 38+ countries and thousands of sources."
+  },
+  {
+    name: "Abigail Soryal",
+    role: "Research Associate",
+    photo: "/images/staff/abigail.jpg",
+    description: "Supports Bilby's research efforts with policy analysis, data validation, and knowledge graph curation across multiple regions and regulatory domains."
+  },
 ];
 
 const storyItems = [
@@ -61,19 +152,23 @@ const storyItems = [
 const mediaCards = [
   {
     title: "Medium: Bilby CTO",
-    body: "Strategic briefings and global policy analysis for organizations navigating geopolitical shifts."
+    body: "Strategic briefings and global policy analysis for organizations navigating geopolitical shifts.",
+    Icon: Article
   },
   {
     title: "The Conversation",
-    body: "How to use A.I. in policy analysis while maintaining public trust."
+    body: "How to use A.I. in policy analysis while maintaining public trust.",
+    Icon: Forum
   },
   {
     title: "Bilby in the media",
-    body: "Monthly releases highlighting global government activity, policy sentiment, and market impact."
+    body: "Monthly releases highlighting global government activity, policy sentiment, and market impact.",
+    Icon: Campaign
   },
   {
     title: "Public insights",
-    body: "Independent research on regulatory risk, sovereign AI, and the signals that shift outcomes."
+    body: "Independent research on regulatory risk, sovereign AI, and the signals that shift outcomes.",
+    Icon: Lightbulb
   }
 ];
 
@@ -114,6 +209,62 @@ const faqItems = [
       "We offer demo access at lite.bilby.ai. For custom proposals, email ryan@bilby.ai with your use case to schedule a call."
   }
 ];
+
+function StaffSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const active = staffMembers[activeIndex];
+
+  return (
+    <section className="bg-white py-20">
+      <StaggerGroup className="mx-auto w-full max-w-6xl px-6 lg:px-10">
+        <h3 className="type-display-xl">Staff</h3>
+        <div className="mt-12 grid gap-8 lg:grid-cols-[0.5fr_1fr]">
+          <div className="sticky top-8 self-start border border-default bg-surface-tan px-1.5 pb-1.5 pt-3">
+            <div className="relative aspect-[5/6] w-full overflow-hidden border border-default bg-surface-soft">
+              <Image
+                alt={active.name}
+                src={active.photo}
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="mt-3 px-2 pb-2">
+              <p className="type-body-13 font-medium text-brand">{active.name}</p>
+              <p className="type-mono-10 text-brand-soft">{active.role}</p>
+              <p className="type-body-12 mt-2 text-brand-soft leading-[1.5]">
+                {active.description}
+              </p>
+            </div>
+          </div>
+          <div className="border border-default">
+            <div className="divide-y divide-default">
+              {staffMembers.map((member, i) => {
+                const isActive = i === activeIndex;
+                return (
+                  <div
+                    key={member.name}
+                    onMouseEnter={() => setActiveIndex(i)}
+                    className={`cursor-pointer transition-colors duration-200 ${
+                      isActive ? "bg-surface-soft" : ""
+                    }`}
+                  >
+                    <div className="type-body-12 grid grid-cols-[0.32fr_0.5fr_0.18fr] items-center gap-3 px-4 py-2.5 text-left text-brand">
+                      <span className="type-mono-10 text-brand-soft">{member.role}</span>
+                      <span>{member.name}</span>
+                      <span className="type-mono-10 text-right text-[rgb(var(--color-brand)/0.6)]">
+                        {isActive ? "▾" : "▸"}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </StaggerGroup>
+    </section>
+  );
+}
 
 export function AboutPage() {
   return (
@@ -182,10 +333,12 @@ export function AboutPage() {
                   Technical white paper here
                 </p>
                 <div className="flex items-center gap-4">
-                  <div className="size-20 overflow-hidden rounded-full bg-neutral" />
+                  <div className="size-20 overflow-hidden rounded-full bg-neutral">
+                    <Image alt="Dr. Ryan Manuel" src="/images/staff/ryan-manuel.png" width={80} height={80} className="size-full object-cover" />
+                  </div>
                 <div className="type-body-15-2">
-                    <p className="font-medium text-brand">Name</p>
-                    <p className="text-neutral">Title</p>
+                    <p className="font-medium text-brand">Dr. Ryan Manuel</p>
+                    <p className="text-neutral">CEO & Founder</p>
                   </div>
                 </div>
               </div>
@@ -194,65 +347,7 @@ export function AboutPage() {
         </StaggerGroup>
       </section>
 
-      <section className="bg-white py-20">
-        <StaggerGroup className="mx-auto w-full max-w-6xl px-6 lg:px-10">
-          <h3 className="type-display-xl">
-            Staff
-          </h3>
-          <div className="mt-12 grid gap-8 lg:grid-cols-[0.5fr_1fr]">
-            <div className="border border-default bg-surface-tan px-1.5 pb-1.5 pt-3">
-              <Image
-                alt=""
-                src={imgImage85}
-                width={378}
-                height={456}
-                className="w-full border border-default object-cover"
-              />
-            </div>
-            <div className="border border-default">
-              <div className="grid grid-cols-[0.32fr_0.5fr_0.18fr] items-center gap-3 bg-brand px-4 py-3 text-white">
-                <div className="type-mono-10 text-white/80">
-                  Leadership team
-                </div>
-                <div className="type-body-13">Dr. Ryan Manuel</div>
-                <div className="type-mono-10 text-right text-white/70">
-                  Info
-                </div>
-              </div>
-              <div className="type-body-12 border-b border-default px-4 py-4 text-brand-soft">
-                Dr Ryan Manuel has more than 20 years industry experience; a third-time
-                founder, he previously taught at Oxford, Australian National and Hong Kong
-                universities, and worked for BCG and the Australian government. He holds a
-                doctorate from Oxford, where he was a Rhodes Scholar.
-              </div>
-              <div className="type-mono-10 grid grid-cols-[0.32fr_0.5fr_0.18fr] items-center gap-3 border-b border-default px-4 py-2 text-brand-soft">
-                <span><span className="mr-1">/</span>POST</span>
-                <span><span className="mr-1">/</span>Name</span>
-                <span className="text-right"><span className="mr-1">/</span>Type</span>
-              </div>
-              <div className="divide-y divide-default">
-                {staffRows.map((row) => (
-                  <div
-                    key={`${row.role}-${row.name}`}
-                    className="type-body-12 grid grid-cols-[0.32fr_0.5fr_0.18fr] items-center gap-3 px-4 py-2 text-brand"
-                  >
-                    <span className="type-mono-10 text-brand-soft">
-                      {row.role}
-                    </span>
-                    <span>{row.name}</span>
-                    <span className="type-mono-10 flex items-center justify-end gap-2 text-[rgb(var(--color-brand)/0.6)]">
-                      Info
-                      <span aria-hidden className="type-body-12 text-[rgb(var(--color-brand)/0.6)]">
-                        +
-                      </span>
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </StaggerGroup>
-      </section>
+      <StaffSection />
 
       <section className="bg-surface-muted py-20">
         <StaggerGroup className="mx-auto w-full max-w-6xl px-6 lg:px-10">
@@ -303,7 +398,7 @@ export function AboutPage() {
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {mediaCards.map((card) => (
               <div key={card.title} className="border border-default p-6">
-                <div className="mb-4 h-10 w-10 bg-brand" />
+                <card.Icon className="mb-4 size-10 text-brand" />
                 <p className="type-body-sm uppercase">
                   {card.title}
                 </p>

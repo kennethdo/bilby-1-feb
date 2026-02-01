@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Dashboard, Automation, SmartToy, Extension, Database } from "@material-symbols-svg/react/w200";
 
 import { cn } from "@/lib/utils";
 import { SiteHeader } from "@/components/site-header";
@@ -6,51 +7,51 @@ import { MotionSection, StaggerGroup } from "@/components/motion-section";
 import { mainNavItems } from "@/components/nav-data";
 
 const imgHero =
-  "https://www.figma.com/api/mcp/asset/2572d1ea-29d4-4c32-b95b-0dc99fcee3d7";
+  "/images/0ff9142d-1bef-47d4-b631-3c388ede2041.png";
 const imgBackgroundGrid =
-  "https://www.figma.com/api/mcp/asset/6a1e6d7d-be87-4f35-962a-11ead1b934cd";
+  "/images/94a41a52-85ec-48fd-9f56-c4526b263a54.png";
 const imgCapabilitiesTexture =
-  "https://www.figma.com/api/mcp/asset/ace015f0-17d7-4ef4-b8a9-ebec6df3fb0e";
+  "/images/94994b09-13e5-4a75-85aa-8bd288467df4.png";
 const imgImpactCard1 =
-  "https://www.figma.com/api/mcp/asset/2e69c7e2-53b5-47ae-93d6-83c30df4eec6";
+  "/images/6ca081c2-8277-4765-8495-94dc5d1243d9.png";
 const imgImpactCard2 =
-  "https://www.figma.com/api/mcp/asset/5a7c0546-d324-4769-8d57-2c61b9585896";
+  "/images/47c32efb-bc5b-43e5-a4e8-ec8793b00a91.png";
 const imgImpactCard3 =
-  "https://www.figma.com/api/mcp/asset/9150a0c5-9eef-4c4b-9f41-15a0467cfc0a";
+  "/images/265e755b-9a86-44d4-9d29-25f17b4376c6.png";
 const imgImpactCard4 =
-  "https://www.figma.com/api/mcp/asset/ef5b2cba-c1d5-4a1e-a9ae-cf60077f4c63";
+  "/images/9ef5d70a-bec0-4869-a20a-3cedcf9b60da.png";
 const imgLogo =
-  "https://www.figma.com/api/mcp/asset/2d6dea7a-cb4f-43f8-9ad1-7a38b704f49c";
+  "/images/9ca84669-40fd-4d3b-b1a0-3e3c167938b3.svg";
 const imgNavMark =
-  "https://www.figma.com/api/mcp/asset/cc8bf780-5650-4964-a527-f6116a3b86b7";
+  "/images/f441779b-17a7-43ff-b6ad-5147185c00d6.svg";
 const imgSocialLinkedIn =
-  "https://www.figma.com/api/mcp/asset/a8fb309e-e7cd-49c1-92bc-2e83ba94b5b0";
+  "/images/0b652c03-20e0-4a07-8b9c-e992d6290b85.svg";
 const imgSocialX =
-  "https://www.figma.com/api/mcp/asset/cc9a32df-75e0-4e9b-98f3-6652b03da409";
+  "/images/69148a19-30fa-43e4-ba43-ccfb0cb70398.svg";
 const imgSocialYoutube =
-  "https://www.figma.com/api/mcp/asset/ba317ff5-aff1-4386-9ed0-7c51d49c61d9";
+  "/images/4d7b6ba0-e212-4038-acb0-cd9586454eda.svg";
 const imgSocialInstagram =
-  "https://www.figma.com/api/mcp/asset/c4322abe-230c-4870-a393-2a6795f4147b";
+  "/images/48624408-d1fe-4e1a-a719-6b9099eac032.svg";
 const imgSocialGithub =
-  "https://www.figma.com/api/mcp/asset/4e7b6d7b-04c8-4840-adca-b4e11d6cd1cc";
+  "/images/cc942677-5df9-4659-b6a0-104bc87b5250.svg";
 const imgCapabilityIcon1 =
-  "https://www.figma.com/api/mcp/asset/4d44792e-b79f-45da-b303-72736df425bd";
+  "/images/7aeb8978-ee64-4136-8c6f-05c44dbbfe5b.svg";
 const imgCapabilityIcon2 =
-  "https://www.figma.com/api/mcp/asset/ba164343-eaff-4cd3-b558-ff6e7757f30d";
+  "/images/f5cd881f-2ef3-4b35-9638-fe58234cbd5e.svg";
 const imgCapabilityIcon3 =
-  "https://www.figma.com/api/mcp/asset/59e23d6c-7c98-4511-9b0e-710332b0d603";
+  "/images/a85f3e9d-1328-49e6-9e03-8d55a59c72c8.svg";
 const imgCapabilityIcon4 =
-  "https://www.figma.com/api/mcp/asset/7ba4a93a-436f-48d5-9ed2-2001a4eaf0f0";
+  "/images/89d9e14f-6c7b-4272-9c9e-eb19ea2c080a.svg";
 const imgCapabilityIcon5 =
-  "https://www.figma.com/api/mcp/asset/01482f99-cb7a-4246-9adb-fdcd9382832d";
+  "/images/b32da51b-ce43-43ee-8edf-970ba1eff49f.svg";
 const imgQuoteVector =
-  "https://www.figma.com/api/mcp/asset/7155d84d-9f99-4e97-943d-7bb981bf679a";
+  "/images/ac94a57a-306c-4053-b1da-97938603ae33.svg";
 const imgQuoteVector2 =
-  "https://www.figma.com/api/mcp/asset/517e4b2c-baf1-4ee2-aca9-cfd0b6ec1cde";
+  "/images/0890c57f-6189-4071-87ef-99317dddedbc.svg";
 const imgDotsLeft =
-  "https://www.figma.com/api/mcp/asset/a0909236-fa2b-49b5-aaad-846d60bee84d";
+  "/images/93c7d494-7fd8-44d3-91ef-7662a7078f9e.svg";
 const imgDotsRight =
-  "https://www.figma.com/api/mcp/asset/7ee4af95-9709-4267-86ab-a612aea87949";
+  "/images/94ee7d35-d0d2-4bc9-9c22-6c12f4facd3e.svg";
 
 const navItems = mainNavItems;
 
@@ -67,31 +68,31 @@ const capabilityCards = [
     title: "Core Analysis Platforms",
     body:
       "Custom dashboards and APIs for auto-analysing government activity, matching statements to actors, and tracking narratives and sentiment across languages and regions — including automated policy testing and visualisation.",
-    icon: imgCapabilityIcon1
+    Icon: Dashboard
   },
   {
     title: "Automated Analysis Tools",
     body:
       "Policy lifecycle and importance markup tools, graph databases for stakeholder mapping, and ML ops to build supervised and unsupervised models on top of government data.",
-    icon: imgCapabilityIcon2
+    Icon: Automation
   },
   {
     title: "Generative AI Tools",
     body:
       "Web, mobile, and WhatsApp-integrated interfaces for querying insights, generating reports, and simulating policy outcomes, in the language and format your teams actually use.",
-    icon: imgCapabilityIcon3
+    Icon: SmartToy
   },
   {
     title: "Specialised Modules",
     body:
       "Automated company analysis, regulatory pipelines, social media legal compliance, and geo-political risk advisory reports on demand, tuned to your settings and jurisdictions.",
-    icon: imgCapabilityIcon4
+    Icon: Extension
   },
   {
     title: "Data Enrichment Services",
     body:
       "Normalised, enriched datasets for model builders, with human-in-the-loop refinement for accuracy and REST APIs for seamless integration into your existing infrastructure.",
-    icon: imgCapabilityIcon5
+    Icon: Database
   }
 ];
 
@@ -241,7 +242,7 @@ export function PlatformPage() {
                   index !== 0 && "border-l border-white/30"
                 )}
               >
-                <Image alt="" src={card.icon} width={28} height={28} />
+                <card.Icon className="size-7 text-white" />
                 <div className="space-y-3">
                   <p className="type-mono-xs text-white">
                     {card.title}

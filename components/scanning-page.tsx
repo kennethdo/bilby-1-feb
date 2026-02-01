@@ -1,48 +1,49 @@
 import Image from "next/image";
 import { Fragment } from "react";
+import { Language, VerifiedUser, School } from "@material-symbols-svg/react/w200";
 
 import { mainNavItems } from "@/components/nav-data";
 import { SiteHeader } from "@/components/site-header";
 import { MotionSection, StaggerGroup } from "@/components/motion-section";
 
 const imgImage80 =
-  "https://www.figma.com/api/mcp/asset/2eb3f743-8925-4839-8485-fbeb142420b3";
+  "/images/67ae2d1c-3de1-4dad-b38b-dd62caa6aade.png";
 const imgImage54 =
-  "https://www.figma.com/api/mcp/asset/0f2cb459-7a31-4b2b-af35-136dbfcf8e9e";
+  "/images/f0c6d3b0-8650-41b3-9254-fd4571c935af.png";
 const imgImage64 =
-  "https://www.figma.com/api/mcp/asset/0aca4894-6c3e-4899-afd3-9df14ea275eb";
+  "/images/a0ffdb08-bf35-4212-97e7-5884259667eb.png";
 const imgImage70 =
-  "https://www.figma.com/api/mcp/asset/160c7b47-c254-40eb-aaf6-75435e7e01a9";
+  "/images/6e8b048f-f809-476c-a049-271dbb6c2f0b.png";
 const imgImage71 =
-  "https://www.figma.com/api/mcp/asset/fb308fb6-8184-44a3-b28a-37afc86aa554";
+  "/images/b746bc6e-2feb-460a-a8df-65d72312479f.png";
 const imgImage72 =
-  "https://www.figma.com/api/mcp/asset/5cc67282-9a91-4d32-ab0c-ea4fe24e595a";
+  "/images/7312bc62-24a8-4dbc-b521-15c042199d32.png";
 const imgLogo =
-  "https://www.figma.com/api/mcp/asset/ee64851b-936c-4e35-b753-4c25fc1ae90a";
+  "/images/6ae43774-8782-4482-b744-dc80ceff7b5f.svg";
 const imgFrame1000003036 =
-  "https://www.figma.com/api/mcp/asset/87261b2f-f970-482a-bc72-4d0f8e8a4c95";
+  "/images/84a5fa6a-720f-4d32-b965-d33d2c7a0f44.svg";
 const imgSocialLinkedIn =
-  "https://www.figma.com/api/mcp/asset/addfe107-c441-465b-8e13-cb035d58f411";
+  "/images/58cddc74-2fe7-43a7-8fc6-6af89da9493b.svg";
 const imgSocialX =
-  "https://www.figma.com/api/mcp/asset/310d5413-6851-4055-9b23-cc1b58c500e5";
+  "/images/278018a2-ce1b-49a3-9637-ef5438292346.svg";
 const imgSocialYoutube =
-  "https://www.figma.com/api/mcp/asset/5604296f-1eb8-4f62-b875-c69cead4f3ef";
+  "/images/8e6eae6f-1b8f-43c6-8c5f-df9b1dcb47b4.svg";
 const imgSocialInstagram =
-  "https://www.figma.com/api/mcp/asset/adce01ff-a934-4e1e-b253-64b09e4dbb04";
+  "/images/0113247a-d2f4-4136-b135-aa4932a871e7.svg";
 const imgSocialGithub =
-  "https://www.figma.com/api/mcp/asset/aef7b9b4-2939-4d47-bc8d-0b4bca05adca";
+  "/images/59fbced6-1f2c-4955-b9cb-7f0fd4122c9e.svg";
 const imgVector =
-  "https://www.figma.com/api/mcp/asset/ea681809-70db-441e-986b-48df280af044";
+  "/images/b7bdd235-a54b-482d-8992-c3b8c1a40be2.svg";
 const imgGlobe1 =
-  "https://www.figma.com/api/mcp/asset/de2b3cce-2501-4620-97c7-3ff1a5d387d1";
+  "/images/49e678a6-8d82-448a-af13-1fd36e6c311d.svg";
 const imgGlobe2 =
-  "https://www.figma.com/api/mcp/asset/400307f7-131d-4f1f-a888-5eea11c4eb8e";
+  "/images/1a3e240f-e95d-44d7-8e81-c9eb6668b645.svg";
 const imgGlobe3 =
-  "https://www.figma.com/api/mcp/asset/b86f622c-1592-4bd9-acb5-18348ee2d52c";
+  "/images/926068ff-bdfb-4f4c-ac79-fcec9eed2697.svg";
 const imgVector35 =
-  "https://www.figma.com/api/mcp/asset/bfe5ed3c-140d-45f2-8c75-e8679581ca29";
+  "/images/813bd170-3f4d-457e-b802-423a397dbfc5.svg";
 const imgVector1 =
-  "https://www.figma.com/api/mcp/asset/2f31f3f3-1b88-48c0-b236-00afb220b224";
+  "/images/2086b9c6-6ffc-4455-9dc7-73082c0ed330.svg";
 
 const socialItems = [
   { label: "LinkedIn", icon: imgSocialLinkedIn, href: "#" },
@@ -58,21 +59,21 @@ const featureCards = [
     body:
       "wide coverage of markets from Asia, Europe, the Americas, and the Middle East.",
     image: imgImage70,
-    icon: imgGlobe1
+    Icon: Language
   },
   {
     title: "Guaranteed capture",
     body:
       "automated AI coverage checking and SLA guarantee that we don't miss anything",
     image: imgImage71,
-    icon: imgGlobe2
+    Icon: VerifiedUser
   },
   {
     title: "Expert curation",
     body:
       "curated, modelled, and written by genuine specialists (mainly professors).",
     image: imgImage72,
-    icon: imgGlobe3
+    Icon: School
   }
 ];
 
@@ -179,13 +180,6 @@ export function ScanningPage() {
                           src={card.image}
                           fill
                           className="object-cover"
-                        />
-                        <Image
-                          alt=""
-                          src={card.icon}
-                          width={46}
-                          height={46}
-                          className="absolute left-1/2 top-[11px] -translate-x-1/2"
                         />
                       </div>
                       <p className="type-body-14-5 mt-4">{card.body}</p>

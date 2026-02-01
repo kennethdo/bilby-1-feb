@@ -5,31 +5,31 @@ import { SiteHeader } from "@/components/site-header";
 import { MotionSection, StaggerGroup } from "@/components/motion-section";
 
 const imgImage81 =
-  "https://www.figma.com/api/mcp/asset/fd1ed629-9237-405c-9fe2-6838cbed6f63";
+  "/images/725a732f-1cef-48ef-b3cc-26ecd37e8443.png";
 const imgImage65 =
-  "https://www.figma.com/api/mcp/asset/4730b9e3-5a1a-46be-b6c1-081199bf8249";
+  "/images/122d8c7b-f03f-4152-9faf-5ec05df65325.png";
 const imgImage64 =
-  "https://www.figma.com/api/mcp/asset/16367ce4-3d6f-456c-9494-109a998b00a3";
+  "/images/794ac1fe-cae9-4545-a546-7239cc433f12.png";
 const imgImage66 =
-  "https://www.figma.com/api/mcp/asset/dddd6409-24bc-4fab-b42b-f6acbde89927";
+  "/images/39ffb92a-1fdd-449c-ab1e-3a137dc3469b.png";
 const imgLogo =
-  "https://www.figma.com/api/mcp/asset/4ed355af-1376-482e-94f0-ccbcc6e4f21e";
+  "/images/4479504e-310a-4965-bd8d-90b1d8629e11.svg";
 const imgFrame1000003036 =
-  "https://www.figma.com/api/mcp/asset/0f335b0c-2b38-45f4-a568-a0530ea408c8";
+  "/images/ad1d210a-ee62-4dd7-a9b9-e773ac705e20.svg";
 const imgSocialLinkedIn =
-  "https://www.figma.com/api/mcp/asset/609ed5c2-aa23-4201-a7a0-fd64d8bd274a";
+  "/images/d3d3da3b-daa5-459e-a56d-bddbc91f9cb8.svg";
 const imgSocialX =
-  "https://www.figma.com/api/mcp/asset/39b7084b-347f-4dad-8c0b-0a5d88135d3f";
+  "/images/51dacac2-c571-4c10-99ec-c429615a8b57.svg";
 const imgSocialYoutube =
-  "https://www.figma.com/api/mcp/asset/45e6e46e-2cc4-423a-a41a-556bcbc613c4";
+  "/images/908320f3-c500-4f32-8254-f1339fe06228.svg";
 const imgSocialInstagram =
-  "https://www.figma.com/api/mcp/asset/097eab38-cc16-4e2f-9832-becfc54ff377";
+  "/images/b6218a3a-7090-4af6-a45f-afc11bb2b1a5.svg";
 const imgSocialGithub =
-  "https://www.figma.com/api/mcp/asset/c1bc891c-7eed-4f41-a3a0-f184c143a849";
+  "/images/1b2cc422-f52b-4083-ab2a-b47ebf2d0a4d.svg";
 const imgDotsLeft =
-  "https://www.figma.com/api/mcp/asset/3a5cca91-ea14-472f-bc2f-3fd54a08e25c";
+  "/images/ab6c48ab-ae00-4132-b990-f0f7036953c5.svg";
 const imgDotsRight =
-  "https://www.figma.com/api/mcp/asset/153c38f9-6907-43a9-96df-9bc5c170aab3";
+  "/images/e7286732-84b6-4b4f-b93a-535e3cd8c5cb.svg";
 
 const socialItems = [
   { label: "LinkedIn", icon: imgSocialLinkedIn, href: "#" },

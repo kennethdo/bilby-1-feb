@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { KeyboardArrowDown, Menu } from "@material-symbols-svg/react/w200";
 
 import { cn } from "@/lib/utils";
 
@@ -63,6 +64,16 @@ export function SiteHeader({
             ) : null}
           </div>
         </nav>
+        <button
+          aria-label="Open menu"
+          className={cn(
+            "flex items-center justify-center border-l border-muted px-3 lg:hidden",
+            hoverBase,
+            "hover:opacity-70"
+          )}
+        >
+          <Menu className="size-6 text-brand" />
+        </button>
         <div className="flex items-center gap-2 border-l border-muted pl-[9px] pr-[8px] py-[8px]">
           <div className="hidden items-center gap-2 xl:flex">
             {socialItems.map((item) => (
@@ -90,9 +101,7 @@ export function SiteHeader({
                 )}
               >
                 Follow us
-                <span aria-hidden className="text-[10px]">
-                  ▼
-                </span>
+                <KeyboardArrowDown aria-hidden className="size-4 text-brand" />
               </span>
               <div className="pointer-events-none absolute right-full top-full z-10 mr-2 mt-2 w-[220px] translate-y-1 rounded border border-muted bg-white opacity-0 shadow-lg transition-all duration-150 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
                 <div className="flex flex-col py-2">

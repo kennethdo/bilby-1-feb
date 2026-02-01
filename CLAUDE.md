@@ -43,4 +43,23 @@
 - File: https://www.figma.com/design/JeBNlyIXgrcyQ1rwyfpebB/Bilby?node-id=0-1
 - Cross-check every component against Figma for spacing, colors, typography, layout
 
+## Current State (Feb 1 2026)
+
+### Completed
+- Material Symbols Light icons added via `@material-symbols-svg/react/w200` package
+- Icons replaced in: site-header.tsx (KeyboardArrowDown, Menu), home-sections.tsx (Add, ArrowForward, AccountBalance, Payments), api-page.tsx (ArrowForward), about-page.tsx (Add, Article, Forum, Campaign, Lightbulb), platform-page.tsx (Dashboard, Automation, SmartToy, Extension, Database), scanning-page.tsx (Language, VerifiedUser, School)
+- Fixed navy blue `bg-[rgb(var(--color-grid))]` → `bg-brand` in home-sections.tsx (Learn More buttons + Our Services card)
+- Build passes successfully
+
+### Blocked: 126 Figma Asset Images Are 404
+- ALL image URLs (`https://www.figma.com/api/mcp/asset/...`) return 404 — they're temporary MCP-generated URLs that expired
+- 126 unique URLs across 8 component files (home-sections, platform-page, api-page, about-page, scanning-page, contact-page, bilby-gcc-page, bilby-japan-page)
+- No local images in `/public/` — only 3 hero PNGs in project root
+- **Next step**: Re-authorize Figma MCP (`claude plugins install @anthropic-ai/claude-code-figma`), then use `get_design_context` per page to get fresh asset URLs, download to `/public/images/`, and update all component references to local paths
+- Figma page node IDs: Home=3400:19602, Platform=2960:1629, About=3463:1194
+
 ## Learnings
+- `@material-symbols-svg/react` uses `/w200` subpath (not `/dist/w200`) — checked via package.json exports field
+- `AutoAwesome` icon doesn't exist in w200; use `Automation` instead
+- Figma MCP asset URLs are temporary and expire — always download to local `/public/` for production
+- `--color-grid: 18 44 95` is navy blue, not brand maroon — avoid using it for primary UI elements
