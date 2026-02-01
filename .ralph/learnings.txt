@@ -1,0 +1,13 @@
+# Ralph Test App Learnings
+
+## Codebase Patterns
+- Database module (src/db.js) exports both `db` (singleton instance) and `initializeDatabase` (factory function)
+- Tests use `delete require.cache[require.resolve(...)]` to get fresh module instances when needed
+- Node built-in test runner with `node:test` and `node:assert` - test files at tests/*.test.js
+- better-sqlite3 with WAL mode enabled for better concurrent read performance
+
+## Gotchas
+- Express 5.x is used (not 4.x) - check for API differences if something doesn't work as expected
+- data/ directory and data/app.db are created at runtime - add to .gitignore if not already there
+
+---

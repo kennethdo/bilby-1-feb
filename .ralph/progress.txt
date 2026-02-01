@@ -1,0 +1,11 @@
+# Ralph Test App Progress Log
+
+---
+
+## 2026-02-01 - RTA-001: Database setup with users table
+- Created src/db.js with better-sqlite3 initialization, WAL mode, and users table creation
+- Users table schema: id (INTEGER PK AUTOINCREMENT), email (TEXT UNIQUE NOT NULL), password_hash (TEXT NOT NULL), created_at (TEXT DEFAULT CURRENT_TIMESTAMP)
+- Database file stored at data/app.db, data/ directory created automatically
+- Exports db instance and initializeDatabase function
+- Files changed: src/db.js, tests/db.test.js (6 tests, all passing)
+---
