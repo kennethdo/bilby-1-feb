@@ -54,7 +54,7 @@ const staggerItem = {
   hidden: { y: 12 },
   visible: {
     y: 0,
-    transition: { duration: 0.2, ease: "easeOut" }
+    transition: { duration: 0.2, ease: "easeOut" as const }
   }
 };
 

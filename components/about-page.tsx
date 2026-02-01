@@ -220,14 +220,15 @@ export function AboutPage() {
                 </div>
               </div>
               <div className="type-body-12 border-b border-default px-4 py-4 text-brand-soft">
-                Dr Ryan Manuel has more than 20 years industry experience in third‑intelligence
-                consulting. He previously taught at Oxford, Australian National and Hong Kong
-                universities, and worked for BCG and the Australian Government.
+                Dr Ryan Manuel has more than 20 years industry experience; a third-time
+                founder, he previously taught at Oxford, Australian National and Hong Kong
+                universities, and worked for BCG and the Australian government. He holds a
+                doctorate from Oxford, where he was a Rhodes Scholar.
               </div>
               <div className="type-mono-10 grid grid-cols-[0.32fr_0.5fr_0.18fr] items-center gap-3 border-b border-default px-4 py-2 text-brand-soft">
-                <span>Role</span>
-                <span>Name</span>
-                <span className="text-right">Type</span>
+                <span><span className="mr-1">/</span>POST</span>
+                <span><span className="mr-1">/</span>Name</span>
+                <span className="text-right"><span className="mr-1">/</span>Type</span>
               </div>
               <div className="divide-y divide-default">
                 {staffRows.map((row) => (
@@ -255,7 +256,10 @@ export function AboutPage() {
 
       <section className="bg-surface-muted py-20">
         <StaggerGroup className="mx-auto w-full max-w-6xl px-6 lg:px-10">
-          <h3 className="type-display-lg">
+          <p className="type-mono-10 uppercase tracking-wider text-brand-soft">
+            Our Story
+          </p>
+          <h3 className="type-display-lg mt-4">
             From the desert to knowledge graphs
           </h3>
           <div className="mt-12 grid gap-8 lg:grid-cols-[0.55fr_0.45fr]">
