@@ -99,25 +99,25 @@ const impactCards = [
   {
     title: "Coordination",
     body:
-      "Monitor deviations in messaging, direction, and movement from national and central plans and/or policy and election statements.",
+      "monitor deviations in messaging, direction, and movement from national and central plans and/or policy and election statements.",
     image: imgImpactCard1
   },
   {
     title: "Companies",
     body:
-      "See how changes in government sentiment, policy, and regulations affect any listed company — and the market relevance and impact of all official news and policy.",
+      "see how changes in government sentiment, policy, and regulations affect any listed company — and the market relevance and impact of all official news and policy.",
     image: imgImpactCard2
   },
   {
     title: "Policy",
     body:
-      "Understand what has changed worldwide in a sector and how that compares to your government activity.",
+      "understand what has changed worldwide in a sector and how that compares to your government activity.",
     image: imgImpactCard3
   },
   {
     title: "Society",
     body:
-      "Match government activity against depictions in media and commentary in online and social media, and test possible impacts of proposed changes.",
+      "match government activity against depictions in media and commentary in online and social media, and test possible impacts of proposed changes.",
     image: imgImpactCard4
   }
 ];
@@ -138,11 +138,11 @@ export function PlatformPage() {
       <MotionSection className="bg-surface-raised">
         <StaggerGroup className="mx-auto w-full max-w-6xl px-6 py-16 lg:px-10">
           <div className="relative rounded-[3px] px-8 py-14 lg:px-10 lg:py-16">
-            <div className="type-mono-xs inline-flex items-center gap-2 border border-brand px-3 py-2 text-brand">
-              <span className="size-1 rounded-[1px] bg-brand" />
-              AI-OS for governments
+            <div className="type-mono-xs inline-flex items-center gap-1.5 border border-brand border-b-[1.5px] border-l-[0.75px] border-r-[0.75px] border-t-[0.75px] px-2 pb-1.5 pt-1 text-brand">
+              <span className="size-[3px] rounded-[1px] bg-brand" />
+              Building Agency
             </div>
-            <div className="mt-6 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div className="mt-4 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               <div className="space-y-4">
                 <h1 className="type-display-hero-xl font-normal text-brand">
                   Making government work better
@@ -225,9 +225,9 @@ export function PlatformPage() {
           />
         </div>
         <StaggerGroup className="relative mx-auto w-full max-w-6xl px-6 py-24 lg:px-10 lg:py-20">
-          <div className="type-mono-xs inline-flex items-center gap-2 border border-white/70 px-3 py-2 text-white">
-            <span className="size-1 rounded-[1px] bg-white" />
-            Capabilities
+          <div className="type-mono-xs inline-flex items-center gap-1.5 border-[0.75px] border-b-[1.5px] border-white/30 px-2 pb-1.5 pt-1 text-white">
+            <span className="size-[2.206px] rounded-[0.5px] bg-white" />
+            AI-POWERED
           </div>
           <h3 className="type-title mt-4 font-normal text-white">
             What our automated solutions can do
@@ -265,7 +265,7 @@ export function PlatformPage() {
               </p>
               <div className="h-px w-full bg-brand" />
             </div>
-            <h3 className="type-display-22 font-normal text-brand">
+            <h3 className="type-body-21 font-normal text-brand">
               Where Sovereign AI lifts performance
             </h3>
           </div>
@@ -285,7 +285,7 @@ export function PlatformPage() {
                   height={383}
                   className="h-[240px] w-full object-cover md:h-[280px]"
                 />
-                <div className="type-mono-18 mt-4 text-brand">
+                <div className="type-mono-22 mt-4 text-brand">
                   {card.title}
                 </div>
                 <p className="type-body-sm text-body-muted mt-2">
@@ -323,9 +323,9 @@ export function PlatformPage() {
                 height={15}
                 className="absolute -top-5 right-0"
               />
-              <div className="type-mono-xs inline-flex items-center gap-2 border border-brand px-3 py-2 text-brand">
-                <span className="size-1 rounded-[1px] bg-brand" />
-                Success stories and what users say
+              <div className="type-mono-xs inline-flex items-center gap-1.5 border border-brand border-b-[1.5px] border-l-[0.75px] border-r-[0.75px] border-t-[0.75px] px-2 pb-1.5 pt-1 text-brand">
+                <span className="size-[3px] rounded-[1px] bg-brand" />
+                Building Agency
               </div>
               <p className="type-body-lg mt-4 text-brand-strong">
                 Our automated solutions have already supported national-level
@@ -348,7 +348,7 @@ export function PlatformPage() {
               <h3 className="type-display-sm sm:type-display-lg font-normal text-brand">
                 You have absolutely no idea how much time this saves me.
               </h3>
-              <p className="type-body-lg mt-6 text-brand">
+              <p className="type-body-21 mt-6 text-brand">
                 Jeremy Page, Head of Asia, The Economist magazine
               </p>
               <Image

@@ -469,6 +469,14 @@ body {
     text-wrap: pretty;
   }
 
+  .type-body-21 {
+    font-family: var(--font-dm), ui-sans-serif, system-ui;
+    font-size: 21.7px;
+    line-height: 27.94px;
+    letter-spacing: -0.484px;
+    text-wrap: pretty;
+  }
+
   .type-mono-12 {
     font-family: var(--font-mono), ui-monospace, SFMono-Regular;
     font-size: 12px;

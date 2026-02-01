@@ -71,16 +71,16 @@ const bigButtons = [
     icon: imgFinanceIcon
   },
   {
-    label: "Financial Services",
-    title: "Transform Government Signals into Alpha",
+    label: "Government",
+    title: "AI OS for Governments",
     icon: imgMoneyIcon
-  },
-  {
-    label: "Regulated Industries",
-    title: "Play offence with regulations rather than defence",
-    icon: imgInfraIcon
   }
 ];
+
+const bigButtonCta = {
+  label: "Our Services",
+  title: "Explore our services and elevate your project with us."
+};
 
 const highlights = [
   {
@@ -205,8 +205,8 @@ export function HeroSection() {
         socialItems={socialLinks}
       />
 
-      <div className="mx-auto w-full max-w-[1232px] px-6 pb-16 pt-14 lg:px-[95px] lg:pb-14">
-        <div className="grid min-h-[720px] items-end gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="overflow-hidden rounded-lg bg-surface-card">
+        <div className="relative mx-auto grid min-h-[756px] w-full max-w-[1440px] items-end gap-10 px-6 pb-14 pt-[62px] lg:grid-cols-[1.1fr_0.9fr]">
           <div className="max-w-[696px] space-y-7">
             <motion.div
               initial={heroInitial}
@@ -236,8 +236,15 @@ export function HeroSection() {
               <a className={heroCtaGhost} href="#">
                 Talk to us
               </a>
-              <a className={heroCtaOutline} href="#">
-                View capabilities
+              <a
+                className={cn(
+                  "type-mono-xs rounded-[1000px] bg-[rgb(var(--color-grid))] px-[18px] py-3 text-inverse",
+                  springHover,
+                  "hover:opacity-80"
+                )}
+                href="#"
+              >
+                Learn More
               </a>
             </motion.div>
           </div>
@@ -261,7 +268,7 @@ export function HeroSection() {
               initial={heroInitial}
               animate={heroAnimate}
               transition={{ duration: 0.2, ease: "easeOut", delay: 0.15 }}
-              className="absolute bottom-0 right-0 z-10 w-full border border-default bg-white px-8 py-7 lg:w-[400px]"
+              className="absolute bottom-0 right-0 z-10 w-full border border-default bg-white/35 px-8 py-7 backdrop-blur-[3.9px] lg:w-[347px]"
             >
               <p className="type-body leading-[1.36] text-brand-strong">
                 Bilby transforms complex global government, policy, and
@@ -272,8 +279,15 @@ export function HeroSection() {
                 <a className={heroCtaGhost} href="#">
                   Talk to us
                 </a>
-                <a className={heroCtaOutline} href="#">
-                  View capabilities
+                <a
+                  className={cn(
+                    "type-mono-xs rounded-[1000px] bg-[rgb(var(--color-grid))] px-[18px] py-3 text-inverse",
+                    springHover,
+                    "hover:opacity-80"
+                  )}
+                  href="#"
+                >
+                  Learn More
                 </a>
               </div>
             </motion.div>
@@ -284,13 +298,8 @@ export function HeroSection() {
       <div className="flex gap-1">
         {bigButtons.map((item, index) => (
           <article
-            key={item.label}
-            className={cn(
-              "relative flex h-[188px] flex-col justify-between bg-white px-6 py-7 text-brand-strong",
-              index === 0 && "flex-1",
-              index === 1 && "flex-1",
-              index === 2 && "flex-[2]"
-            )}
+            key={`${item.label}-${index}`}
+            className="relative flex h-[188px] w-[357px] shrink-0 flex-col justify-between bg-white px-6 py-7 text-brand"
           >
             <div className="type-mono-xs leading-[16px]">
               {item.label}
@@ -307,6 +316,14 @@ export function HeroSection() {
             />
           </article>
         ))}
+        <article className="flex w-[452px] shrink-0 flex-col gap-20 rounded-lg bg-[rgb(var(--color-grid))] px-6 py-7 text-inverse">
+          <p className="type-body-sm font-medium uppercase leading-[1.2]">
+            {bigButtonCta.label}
+          </p>
+          <p className="type-body-sm max-w-[200px] leading-[1.2]">
+            {bigButtonCta.title}
+          </p>
+        </article>
       </div>
     </section>
   );
@@ -561,7 +578,7 @@ export function PillarsSection() {
 
 export function FooterNavSection() {
   return (
-    <section className="relative h-[400px] overflow-hidden bg-surface-soft">
+    <section className="relative h-[480px] overflow-hidden bg-surface-soft">
       <div className="absolute inset-0 z-0 opacity-80 scale-x-[-1]">
         <Image
           alt=""
@@ -573,8 +590,8 @@ export function FooterNavSection() {
       <div className="pointer-events-none absolute bottom-0 left-0 z-10 h-[300px] w-[720px] opacity-90">
         <Image alt="" src={imgFooterVector} fill className="object-contain" />
       </div>
-      <div className="relative z-20 mx-auto h-full w-full max-w-[1232px] px-6 pb-12 pt-20 lg:px-[104px] lg:pb-16">
-        <div className="grid gap-10 text-ink sm:grid-cols-2 lg:grid-cols-3">
+      <div className="relative z-20 h-full w-full px-6 pb-12 pt-[51px] lg:px-[49px] lg:pb-16">
+        <div className="flex flex-wrap gap-16 text-ink">
           {footerNav.map((column) => (
             <div key={column.title} className="type-body-13 space-y-6">
               {column.items.map((item) => (
