@@ -27,3 +27,11 @@
 - Returns 401 for wrong credentials, 400 for missing fields
 - Files changed: src/routes/auth.js, tests/login.test.js (6 tests, all passing, 18 total)
 ---
+
+## 2026-02-01 - RTA-004: Auth middleware for protected routes
+- Created src/middleware/auth.js with Bearer token extraction and JWT verification
+- Attaches decoded payload to req.user on valid token
+- Returns 401 for missing token, non-Bearer format, invalid/expired token, or wrong secret
+- Tests use a minimal Express app with a protected test route (no database needed)
+- Files changed: src/middleware/auth.js, tests/middleware.test.js (6 tests, all passing, 24 total)
+---

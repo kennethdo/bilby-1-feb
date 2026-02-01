@@ -10,6 +10,9 @@
 - JWT_SECRET is defined in src/routes/auth.js (process.env.JWT_SECRET or hardcoded default) — use same constant for signing and verifying tokens
 - jsonwebtoken package: jwt.sign() for creating tokens, jwt.verify() for validating, jwt.decode() for reading without verification
 
+- Auth middleware at src/middleware/auth.js uses the same JWT_SECRET constant as auth routes — keep them in sync
+- Middleware tests don't need database setup — use a simple test route to verify req.user attachment
+
 ## Gotchas
 - Express 5.x is used (not 4.x) - check for API differences if something doesn't work as expected
 - data/ directory and data/app.db are created at runtime - add to .gitignore if not already there
