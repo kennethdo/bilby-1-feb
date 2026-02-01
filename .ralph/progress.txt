@@ -43,3 +43,11 @@
 - Tests register+login to get token, then verify authenticated access and rejection scenarios
 - Files changed: src/routes/auth.js, tests/me.test.js (4 tests, all passing, 28 total)
 ---
+
+## 2026-02-01 - RTA-006: App entry point wiring everything together
+- Created src/index.js with Express app setup, JSON body parsing, and auth route mounting
+- Auth routes mounted at /api/auth, database initialized via db module import
+- Server listens on PORT env var or defaults to 3000, only starts when run directly (require.main === module)
+- App exported for test usage
+- Files changed: src/index.js, tests/index.test.js (6 tests, all passing, 34 total)
+---
