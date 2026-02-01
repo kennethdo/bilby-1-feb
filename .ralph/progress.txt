@@ -18,3 +18,12 @@
 - Tests use minimal Express app with http client (no external test deps)
 - Files changed: src/routes/auth.js, tests/auth.test.js (6 tests, all passing)
 ---
+
+## 2026-02-01 - RTA-003: User login endpoint with JWT
+- Added POST /login route to src/routes/auth.js
+- Verifies email/password against database using bcrypt.compareSync
+- Returns JWT token signed with JWT_SECRET (env var or hardcoded default), expires in 24h
+- JWT payload contains user id and email
+- Returns 401 for wrong credentials, 400 for missing fields
+- Files changed: src/routes/auth.js, tests/login.test.js (6 tests, all passing, 18 total)
+---
