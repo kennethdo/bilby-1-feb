@@ -10,3 +10,13 @@
 - Fixed pre-existing Motion type error (ease: "easeOut" as const)
 - Files changed: components/about-page.tsx, components/motion-section.tsx
 ---
+
+## 2026-02-01 - BILBY-002: Fix Scanning page features section layout and cross-check with Figma
+- Cross-checked Scanning page against Figma design (node 2960:1917)
+- Hero section: Changed chip label "Policy Tracking" → "Building Agency" per Figma; repositioned hero image from full background to right-side contained box (left:754px, 560x620px) matching Figma layout; grouped chip+headline+body in a flex column at bottom-left
+- Features section: Fixed layout to use absolute positioning for cards inside bordered box matching Figma (top:109px, px:34px, gap:35px); added proper wrapper padding (px:18px, py:34px); set blockquote to max-w-1083px; added leading-[1.2] to blockquote text
+- Feature card text: Updated to match Figma exactly — lowercase start ("wide coverage...", "automated AI...", "curated, modelled..."), removed trailing period on card 2
+- Testimonial section: Changed quote from type-display-md (36px) to type-display-lg (44px) matching Figma; added font-semibold and 21.7px custom size for "Ewan Smith" name; adjusted section padding to py-[90px]; repositioned decorative diamond vectors to match Figma coordinates
+- npm run build passes without errors
+- Files changed: components/scanning-page.tsx
+---

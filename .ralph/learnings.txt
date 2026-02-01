@@ -18,5 +18,8 @@
 - Figma node 3463-1194 is a top-level section "V1.2" containing ALL pages — must drill into specific page frames
 - Figma get_design_context output for large nodes saves to file — use python3 to parse XML-like text content
 - Motion (Framer Motion) ease strings need `as const` to satisfy TypeScript Variants type
+- Scanning page Figma frame is node 2960:1917 (1442x2835px)
+- Figma get_metadata output is huge — search with python3/regex for specific node names rather than reading sequentially
+- Typography size mapping: type-display-lg=44px, type-display-md=36px, type-display-xl=56px — check globals.css for exact values before choosing
 
 ---
