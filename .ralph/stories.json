@@ -43,7 +43,7 @@
         "npm run build passes without errors"
       ],
       "priority": 3,
-      "passes": false
+      "passes": true
     }
   ]
 }

@@ -21,5 +21,10 @@
 - Scanning page Figma frame is node 2960:1917 (1442x2835px)
 - Figma get_metadata output is huge — search with python3/regex for specific node names rather than reading sequentially
 - Typography size mapping: type-display-lg=44px, type-display-md=36px, type-display-xl=56px — check globals.css for exact values before choosing
+- Home page Figma frame is node 3400:19602 ("home page - light theme", 1440x4902px)
+- Platform page Figma frame is node 2960:1629 ("Platform", 1440x5060px)
+- Figma uses --color-grid (#122c5f) as the dark navy accent color for CTAs and big buttons
+- Chip components in Figma use asymmetric border widths: border-b-[1.5px] border-l-[0.75px] border-r-[0.75px] border-t-[0.75px]
+- No inline styles rule — always add new typography utility classes to globals.css instead
 
 ---

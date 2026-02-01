@@ -20,3 +20,18 @@
 - npm run build passes without errors
 - Files changed: components/scanning-page.tsx
 ---
+
+## 2026-02-01 - BILBY-003: Cross-check Home and Platform pages against Figma design for visual accuracy
+- Cross-checked Home page against Figma design (node 3400:19602, "home page - light theme")
+- Hero section: Added rounded-lg wrapper with bg-surface-card (#f8f8f8) per Figma; updated hero description container from solid bg-white to translucent bg-white/35 with backdrop-blur-[3.9px] matching Figma; changed "View capabilities" button to rounded pill "Learn More" with dark blue bg (--color-grid) per Figma
+- Big buttons: Fixed to match Figma — two identical "Government" / "AI OS for Governments" cards (w-357px) plus dark blue "Our Services" card (w-452px, rounded-lg, bg-[rgb(var(--color-grid))]) replacing the previous three-button layout
+- Footer nav: Changed from centered grid layout (px-[104px]) to left-aligned flex layout (px-[49px], gap-64px) matching Figma positioning; increased section height from 400px to 480px per Figma
+- Cross-checked Platform page against Figma design (node 2960:1629)
+- Platform hero: Changed chip label "AI-OS for governments" → "Building Agency" per Figma; updated chip styling to match thinner border variant from design
+- Capabilities section: Changed chip from "Capabilities" to "AI-POWERED" per Figma with updated styling for dark background
+- Impact cards: Updated title typography from type-mono-18 (18px) to type-mono-22 (22px) matching Figma's 23px; lowercase impact card body text per Figma
+- Testimonial section: Changed chip text to "Building Agency" per Figma; updated attribution text to custom type-body-21 class (21.7px) matching Figma; updated impact heading to type-body-21
+- Added type-body-21 utility class to globals.css (21.7px, line-height 27.94px, letter-spacing -0.484px)
+- npm run build passes without errors
+- Files changed: components/home-sections.tsx, components/platform-page.tsx, app/globals.css
+---
