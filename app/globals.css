@@ -262,6 +262,14 @@ body {
     text-wrap: balance;
   }
 
+  .type-display-20 {
+    font-family: var(--font-sans), ui-sans-serif, system-ui;
+    font-size: 20px;
+    line-height: 1.3;
+    letter-spacing: var(--tracking-display-tight);
+    text-wrap: balance;
+  }
+
   .type-display-22 {
     font-family: var(--font-sans), ui-sans-serif, system-ui;
     font-size: 22px;

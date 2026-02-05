@@ -424,7 +424,7 @@ export function HighlightsSection() {
           </motion.div>
         </div>
 
-        <div className="mt-24 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-24 grid grid-cols-2 gap-10 lg:grid-cols-4">
           {highlights.map((item, index) => (
             <motion.div
               key={item.title}
@@ -585,7 +585,7 @@ export function PillarsSection() {
                     className="py-3"
                   >
                     <Accordion.Header>
-                      <Accordion.Trigger className="type-display-24 group flex w-full cursor-pointer items-center justify-between text-left text-brand-strong">
+                      <Accordion.Trigger className="type-display-20 sm:type-display-22 group flex w-full cursor-pointer items-center justify-between text-left text-brand-strong">
                         {item.title}
                         <Add
                           aria-hidden
@@ -637,7 +637,7 @@ export function PillarsSection() {
 
 export function FooterNavSection() {
   return (
-    <section className="relative h-[480px] overflow-hidden bg-surface-soft">
+    <section className="relative min-h-[580px] overflow-hidden bg-surface-soft lg:h-[480px]">
       <div className="absolute inset-0 z-0 opacity-80 scale-x-[-1]">
         <Image
           alt=""

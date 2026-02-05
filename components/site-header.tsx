@@ -1,6 +1,9 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { KeyboardArrowDown, Menu } from "@material-symbols-svg/react/w200";
+import { KeyboardArrowDown, Menu, Close } from "@material-symbols-svg/react/w200";
 
 import { cn } from "@/lib/utils";
 
@@ -34,6 +37,7 @@ export function SiteHeader({
   ctaSecondary = { label: "Get Started", href: "#" },
   ctaPrimary = { label: "Book a demo", href: "#" }
 }: SiteHeaderProps) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const hoverBase =
     "spring-transform transition-opacity duration-150 ease-out hover:-translate-y-0.5";
   return (
@@ -68,15 +72,76 @@ export function SiteHeader({
           </div>
         </nav>
         <button
-          aria-label="Open menu"
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className={cn(
             "flex items-center justify-center border-l border-muted px-3 lg:hidden",
             hoverBase,
             "hover:opacity-70"
           )}
         >
-          <Menu className="size-6 text-brand" />
+          {mobileMenuOpen ? (
+            <Close className="size-6 text-brand" />
+          ) : (
+            <Menu className="size-6 text-brand" />
+          )}
         </button>
+
+        {/* Mobile Menu */}
+        <div
+          className={cn(
+            "fixed inset-x-0 top-[57px] z-40 border-b border-muted bg-white transition-all duration-200 ease-out lg:hidden",
+            mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"
+          )}
+        >
+          <nav className="flex flex-col divide-y divide-muted">
+            {navItems.map((item) => {
+              const isActive = activeLabel === item.label;
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={cn(
+                    "px-6 py-4 text-[12px] uppercase tracking-[0.01em] text-brand transition-colors",
+                    isActive && "bg-surface-muted font-semibold"
+                  )}
+                  style={{ fontFamily: "var(--font-mono), monospace" }}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+          </nav>
+          <div className="flex items-center gap-4 border-t border-muted px-6 py-4">
+            {socialItems.map((item) => (
+              <Link
+                key={item.label}
+                aria-label={item.label}
+                href={item.href}
+                className="flex items-center justify-center"
+              >
+                <Image alt="" src={item.icon} width={20} height={20} />
+              </Link>
+            ))}
+          </div>
+          <div className="flex gap-2 border-t border-muted px-6 py-4">
+            <Link
+              className="type-body-12 flex-1 border border-muted px-4 py-3 text-center font-medium uppercase text-brand"
+              href={ctaSecondary.href}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {ctaSecondary.label}
+            </Link>
+            <Link
+              className="type-body-12 flex-1 bg-brand px-4 py-3 text-center font-medium uppercase text-inverse"
+              href={ctaPrimary.href}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {ctaPrimary.label}
+            </Link>
+          </div>
+        </div>
         <div className="flex items-center gap-2 border-l border-muted pl-[9px] pr-[8px] py-[8px]">
           <div className="hidden items-center gap-2 xl:flex">
             {socialItems.map((item) => (
