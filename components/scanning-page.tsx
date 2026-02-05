@@ -174,7 +174,8 @@ export function ScanningPage() {
                 {featureCards.map((card, index) => (
                   <Fragment key={card.title}>
                     <div className="text-center lg:w-[285px]">
-                      <div className="relative mx-auto h-[294px] w-[294px]">
+                      <card.Icon className="mx-auto size-[46px] text-brand" />
+                      <div className="relative mx-auto mt-3 h-[294px] w-[294px]">
                         <Image
                           alt=""
                           src={card.image}
@@ -206,7 +207,7 @@ export function ScanningPage() {
       <MotionSection className="bg-white py-[90px]">
         <StaggerGroup>
         <div className="relative mx-auto max-w-[1155px] text-center">
-          <div className="font-semibold text-brand" style={{ fontFamily: "var(--font-dm), ui-sans-serif, system-ui", fontSize: "21.7px", lineHeight: "27.94px", letterSpacing: "-0.484px" }}>Ewan Smith</div>
+          <div className="type-body-21 font-semibold text-brand">Ewan Smith</div>
           <div className="relative mt-6">
             <p className="type-display-lg leading-[1.04]">
               We remain astounded by the speed and scope of what Bilby provides us

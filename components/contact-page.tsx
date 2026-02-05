@@ -57,7 +57,7 @@ export function ContactPage() {
         <div className="relative mx-auto w-full max-w-6xl px-6 py-24 lg:px-10">
           <div className="type-mono-xs inline-flex items-center gap-2 border border-brand px-3 py-2">
             <span className="size-1 rounded-[1px] bg-brand" />
-            Contact
+            Building Agency
           </div>
           <div className="mt-8 grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <h1 className="type-display-hero-xl font-normal">
@@ -69,6 +69,29 @@ export function ContactPage() {
             </p>
           </div>
         </div>
+        </StaggerGroup>
+      </MotionSection>
+
+      <MotionSection className="bg-surface-soft py-16">
+        <StaggerGroup className="mx-auto w-full max-w-6xl px-6 lg:px-10">
+          <h2 className="type-display-lg mb-12 text-center font-normal text-brand">
+            What to Expect
+          </h2>
+          <div className="grid gap-8 md:grid-cols-3">
+            {[
+              { step: "1", title: "Initial Consultation", time: "5 min" },
+              { step: "2", title: "Expert Discussion", time: "24h" },
+              { step: "3", title: "Custom Demonstration", time: "48h" }
+            ].map((item) => (
+              <div key={item.step} className="border border-default bg-white p-6 text-center">
+                <div className="type-display-hero mx-auto mb-4 flex size-16 items-center justify-center border border-brand text-brand">
+                  {item.step}
+                </div>
+                <p className="type-body font-medium text-brand">{item.title}</p>
+                <p className="type-mono-xs mt-1 text-brand-soft">({item.time})</p>
+              </div>
+            ))}
+          </div>
         </StaggerGroup>
       </MotionSection>
 
@@ -144,11 +167,11 @@ export function ContactPage() {
                 />
               </div>
             </div>
-            <button className="type-mono-xs w-full bg-brand px-6 py-5 text-white">
+            <button type="submit" className="type-mono-xs w-full bg-brand px-6 py-5 text-white">
               Submit Inquiry
             </button>
             <p className="type-mono-10 text-brand">
-              Enterprise-grade security and confidentiality guarantees
+              Enterprise-grade security and confidentiality guaranteed
             </p>
           </form>
           <div className="space-y-6">
@@ -159,7 +182,7 @@ export function ContactPage() {
               <div className="type-body-sm text-body-muted mt-4 space-y-3 leading-[1.4]">
                 <div>
                   <p className="font-semibold">Government Clients</p>
-                  <p>Ministry of Communications, 4.5M USD Malaysia contract, Multi-country deployments</p>
+                  <p>Ministry of Communications, 4.3M USD Malaysia contract, Multi-country deployments</p>
                 </div>
                 <div>
                   <p className="font-semibold">Enterprise Clients</p>

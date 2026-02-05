@@ -70,7 +70,7 @@ export function BilbyJapanPage() {
         <div className="relative mx-auto w-full max-w-6xl px-6 py-16 lg:px-10 lg:py-24">
           <div className="type-mono-xs inline-flex items-center gap-2 border border-brand px-3 py-2">
             <span className="size-1 rounded-[1px] bg-brand" />
-            BILBY JAPAN
+            Building Agency
           </div>
           <div className="mt-8 grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <h1 className="type-jp-38 text-pretty font-jp">

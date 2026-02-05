@@ -72,20 +72,14 @@ export function BilbyGccPage() {
           <div className="flex flex-col items-end text-right" dir="rtl">
             <div className="type-mono-xs inline-flex items-center gap-2 border border-brand px-3 py-2">
               <span className="size-1 rounded-[1px] bg-brand" />
-              BILBY GCC
+              Building Agency
             </div>
             <div className="mt-8 space-y-6 font-arabic text-right">
-              <p
-                className="type-ar-53"
-                style={{ fontVariationSettings: "'wdth' 75" }}
-              >
+              <p className="type-ar-53 [font-variation-settings:'wdth'_75]">
                 تمكّن منصة Bilby القادة في دول مجلس التعاون الخليجي من الاستفادة من
                 المستجدات والأحداث حول العالم باستخدام تقنيات الذكاء الاصطناعي.
               </p>
-              <p
-                className="type-ar-34"
-                style={{ fontVariationSettings: "'wdth' 62.5" }}
-              >
+              <p className="type-ar-34 [font-variation-settings:'wdth'_62.5]">
                 تجمع Bilby بين الرصد الآلي للمعلومات والتحليل الذكي حتى يحصل صُنّاع
                 القرار في المنطقة على صورة واضحة ومحدَّثة لما يحدث حولهم، دون الحاجة
                 إلى تتبّع الأخبار والوثائق بشكل يدوي.

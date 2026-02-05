@@ -88,7 +88,7 @@ export function ApiPage() {
 
       <div className="type-body-sm bg-brand p-2.5 text-center uppercase leading-[1.28] text-white">
         For more info on our quant product, please visit{" "}
-        <span className="underline">Enceladus</span>
+        <span className="underline">this page</span>
       </div>
 
       <MotionSection className="mx-auto w-full max-w-[1440px] px-4 py-10 lg:py-6">
@@ -105,7 +105,7 @@ export function ApiPage() {
           <div className="relative mx-auto flex max-w-[944px] flex-col items-center gap-8 px-6 text-center">
             <div className="type-mono-xs inline-flex items-center gap-1.5 border border-brand border-b-[1px] border-l-[0.5px] border-r-[0.5px] border-t-[0.5px] px-2 pb-1.5 pt-1">
               <span className="size-[3px] rounded-[1px] bg-brand" />
-              AI-OS for governments
+              Building Agency
             </div>
             <h1 className="type-display-hero-xl font-normal">
               Bilby is the world’s best source of marked up government data. We
@@ -259,34 +259,6 @@ export function ApiPage() {
         </StaggerGroup>
       </MotionSection>
 
-      <MotionSection className="relative overflow-hidden bg-white py-20">
-        <StaggerGroup>
-        <div className="absolute inset-0">
-          <Image alt="" src={imgImage64} fill className="object-cover opacity-80" />
-        </div>
-        <div className="relative mx-auto max-w-4xl text-center">
-          <div className="type-body-lg">Ewan Smith</div>
-          <p className="type-display-md mt-6 leading-[1.1]">
-            We remain astounded by the speed and scope of what Bilby provides us
-            every day
-          </p>
-          <Image
-            alt=""
-            src={imgVector1}
-            width={12}
-            height={12}
-            className="absolute left-10 top-10 rotate-45"
-          />
-          <Image
-            alt=""
-            src={imgVector1}
-            width={12}
-            height={12}
-            className="absolute right-10 bottom-6 rotate-45"
-          />
-        </div>
-        </StaggerGroup>
-      </MotionSection>
     </main>
   );
 }

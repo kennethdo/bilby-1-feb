@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Article, Forum, Campaign, Lightbulb } from "@material-symbols-svg/react/w200";
 
+import { cn } from "@/lib/utils";
 import { aboutNavItems } from "@/components/nav-data";
 import { SiteHeader } from "@/components/site-header";
 import { StaggerGroup } from "@/components/motion-section";
@@ -217,7 +218,7 @@ function StaffSection() {
   return (
     <section className="bg-white py-20">
       <StaggerGroup className="mx-auto w-full max-w-6xl px-6 lg:px-10">
-        <h3 className="type-display-xl">Staff</h3>
+        <h3 className="type-display-xl">Leadership Team</h3>
         <div className="mt-12 grid gap-8 lg:grid-cols-[0.5fr_1fr]">
           <div className="sticky top-8 self-start border border-default bg-surface-tan px-1.5 pb-1.5 pt-3">
             <div className="relative aspect-[5/6] w-full overflow-hidden border border-default bg-surface-soft">
@@ -244,9 +245,10 @@ function StaffSection() {
                   <div
                     key={member.name}
                     onMouseEnter={() => setActiveIndex(i)}
-                    className={`cursor-pointer transition-colors duration-200 ${
-                      isActive ? "bg-surface-soft" : ""
-                    }`}
+                    className={cn(
+                      "cursor-pointer transition-colors duration-200",
+                      isActive && "bg-surface-soft"
+                    )}
                   >
                     <div className="type-body-12 grid grid-cols-[0.32fr_0.5fr_0.18fr] items-center gap-3 px-4 py-2.5 text-left text-brand">
                       <span className="type-mono-10 text-brand-soft">{member.role}</span>
@@ -334,11 +336,11 @@ export function AboutPage() {
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="size-20 overflow-hidden rounded-full bg-neutral">
-                    <Image alt="Dr. Ryan Manuel" src="/images/staff/ryan-manuel.png" width={80} height={80} className="size-full object-cover" />
+                    <Image alt="Nicolas Le Pallec" src={imgNicolasLePallec} width={80} height={80} className="size-full object-cover" />
                   </div>
                 <div className="type-body-15-2">
-                    <p className="font-medium text-brand">Dr. Ryan Manuel</p>
-                    <p className="text-neutral">CEO & Founder</p>
+                    <p className="font-medium text-brand">Nicolas Le Pallec</p>
+                    <p className="text-neutral">Head of Engineering</p>
                   </div>
                 </div>
               </div>
@@ -362,11 +364,10 @@ export function AboutPage() {
               {storyItems.map((item, index) => (
                 <div
                   key={item}
-                  className={`type-body flex items-center gap-3 border-b border-default py-3 ${
-                    index === 0
-                      ? "bg-brand px-3 text-white"
-                      : "text-brand"
-                  }`}
+                  className={cn(
+                    "type-body flex items-center gap-3 border-b border-default py-3",
+                    index === 0 ? "bg-brand px-3 text-white" : "text-brand"
+                  )}
                 >
                   <span className="size-2 rounded-full bg-current" />
                   {item}
@@ -398,7 +399,7 @@ export function AboutPage() {
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {mediaCards.map((card) => (
               <div key={card.title} className="border border-default p-6">
-                <card.Icon className="mb-4 size-10 text-brand" />
+                <card.Icon className="mb-4 size-7 text-brand" />
                 <p className="type-body-sm uppercase">
                   {card.title}
                 </p>
