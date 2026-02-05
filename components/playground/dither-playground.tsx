@@ -191,9 +191,27 @@ export default function DitherPlayground() {
       {/* Main Content */}
       <div className="flex min-h-0 flex-1">
         {/* Canvas Area */}
-        <div className="relative flex flex-1 flex-col">
+        <div
+          className="relative flex flex-1 flex-col"
+          onDrop={!isStandaloneEffect ? handleDrop : undefined}
+          onDragOver={!isStandaloneEffect ? handleDragOver : undefined}
+          onDragLeave={!isStandaloneEffect ? handleDragLeave : undefined}
+        >
           {/* Canvas */}
-          <div className="relative flex-1" style={{ backgroundColor: isStandaloneEffect ? settings.color.backgroundColor : undefined }}>
+          <div
+            className="relative flex-1"
+            style={{ backgroundColor: isStandaloneEffect ? settings.color.backgroundColor : undefined }}
+          >
+            {/* Drag overlay */}
+            {isDragging && !isStandaloneEffect && (
+              <div className="pointer-events-none absolute inset-0 z-50 flex items-center justify-center bg-black/60">
+                <div className="rounded border-2 border-dashed border-white/50 px-8 py-4">
+                  <p className="font-mono text-sm uppercase tracking-wider text-white">
+                    Drop file here
+                  </p>
+                </div>
+              </div>
+            )}
             {isStandaloneEffect ? (
               // Standalone effects - no video needed
               settings.effectType === "noiseDots" ? (
@@ -236,17 +254,11 @@ export default function DitherPlayground() {
             )}
           </div>
 
-          {/* Drop Zone - only show for video-based effects */}
+          {/* Upload Bar - only show for video-based effects */}
           {!isStandaloneEffect && (
             <div
-              onDrop={handleDrop}
-              onDragOver={handleDragOver}
-              onDragLeave={handleDragLeave}
               onClick={() => fileInputRef.current?.click()}
-              className={cn(
-                "flex shrink-0 cursor-pointer items-center justify-center border-t border-[#333] bg-[#222] px-6 py-4 transition-colors",
-                isDragging && "bg-[#2a2a2a]"
-              )}
+              className="flex shrink-0 cursor-pointer items-center justify-center border-t border-[#333] bg-[#222] px-6 py-4 transition-colors hover:bg-[#2a2a2a]"
             >
               <input
                 ref={fileInputRef}
@@ -257,9 +269,9 @@ export default function DitherPlayground() {
               />
               <div className="flex flex-col items-center gap-1">
                 <p className="font-mono text-xs uppercase tracking-wider text-[#888]">
-                  {isDragging
-                    ? "Drop file here"
-                    : "Drop file or click to upload"}
+                  {videoElement
+                    ? "Click to change file"
+                    : "Drop anywhere or click to upload"}
                 </p>
                 <p className="font-mono text-[10px] text-[#555]">
                   PNG, JPG, GIF, MP4, WebM
