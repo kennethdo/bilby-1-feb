@@ -9,7 +9,6 @@ import { Add, ArrowForward, AccountBalance, Payments } from "@material-symbols-s
 import { cn } from "@/lib/utils";
 import { SiteHeader } from "@/components/site-header";
 import { mainNavItems, mainSocialItems } from "@/components/nav-data";
-import { GradientBlobBackground } from "@/components/effects";
 
 import heroImgGlobe from "@/hero-img-2.png";
 
@@ -650,11 +649,6 @@ export function FooterNavSection() {
       <div className="pointer-events-none absolute bottom-0 left-0 z-10 h-[300px] w-[720px] opacity-90">
         <Image alt="" src={imgFooterVector} fill className="object-contain" />
       </div>
-      <GradientBlobBackground
-        position="bottom-right"
-        className="z-10"
-        opacity={0.7}
-      />
       <div className="relative z-20 h-full w-full px-6 pb-12 pt-[51px] lg:px-[49px] lg:pb-16">
         <div className="flex flex-wrap gap-16 text-ink">
           {footerNav.map((column) => (

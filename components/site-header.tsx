@@ -37,7 +37,7 @@ export function SiteHeader({
   const hoverBase =
     "spring-transform transition-opacity duration-150 ease-out hover:-translate-y-0.5";
   return (
-    <header className="sticky top-[env(safe-area-inset-top)] z-20 w-full border border-muted bg-white">
+    <header className="sticky top-0 z-50 w-full border border-muted bg-white">
       <div className="mx-auto flex w-full max-w-[1440px] items-stretch px-4">
         <Link href="/" className="flex min-w-[106px] items-center px-4 py-3">
           <Image alt="Bilby logo" src={logoSrc} width={74} height={20} priority />

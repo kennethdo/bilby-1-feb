@@ -9,3 +9,4 @@ ralph-output-*/
 .local/
 ralph-safe.sh
 .vercel
+.env*.local

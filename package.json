@@ -11,6 +11,7 @@
   "dependencies": {
     "@base-ui/react": "^1.1.0",
     "@material-symbols-svg/react": "^0.1.19",
+    "@paper-design/shaders-react": "^0.0.71",
     "@react-three/fiber": "^9.5.0",
     "@react-three/postprocessing": "^3.0.4",
     "clsx": "latest",

@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 import { SiteHeader } from "@/components/site-header";
 import { MotionSection, StaggerGroup } from "@/components/motion-section";
 import { mainNavItems, mainSocialItems } from "@/components/nav-data";
-import { GradientBlobBackground } from "@/components/effects";
 
 const imgHero =
   "/images/0ff9142d-1bef-47d4-b631-3c388ede2041.png";
@@ -156,11 +155,6 @@ export function PlatformPage() {
         <div className="absolute inset-0 opacity-30 mix-blend-darken">
           <Image alt="" src={imgBackgroundGrid} fill className="object-cover" />
         </div>
-        <GradientBlobBackground
-          position="bottom-left"
-          className="z-10"
-          opacity={0.5}
-        />
         <StaggerGroup className="relative z-20 mx-auto w-full max-w-6xl px-6 py-20 lg:px-10 lg:py-24">
           <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
             <h2 className="type-display-md sm:type-display-lg font-normal text-brand">
@@ -295,11 +289,6 @@ export function PlatformPage() {
         <div className="absolute inset-0 opacity-80 mix-blend-darken">
           <Image alt="" src={imgBackgroundGrid} fill className="object-cover" />
         </div>
-        <GradientBlobBackground
-          position="bottom-right"
-          className="z-10"
-          opacity={0.7}
-        />
         <StaggerGroup className="relative z-20 mx-auto w-full max-w-6xl px-6 pb-28 pt-32 lg:px-10">
           <div className="mx-auto w-full max-w-4xl border border-default bg-white p-6 lg:p-10">
             <div className="relative border border-default p-6 lg:p-8">
@@ -308,14 +297,14 @@ export function PlatformPage() {
                 src={imgDotsLeft}
                 width={15}
                 height={15}
-                className="absolute -top-5 left-0"
+                className="absolute -left-[7px] -top-[7px]"
               />
               <Image
                 alt=""
                 src={imgDotsRight}
                 width={15}
                 height={15}
-                className="absolute -top-5 right-0"
+                className="absolute -right-[7px] -top-[7px]"
               />
               <div className="type-mono-xs inline-flex items-center gap-1.5 border border-brand border-b-[1.5px] border-l-[0.75px] border-r-[0.75px] border-t-[0.75px] px-2 pb-1.5 pt-1 text-brand">
                 <span className="size-[3px] rounded-[1px] bg-brand" />

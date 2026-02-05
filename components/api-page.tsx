@@ -38,6 +38,8 @@ const imgVector =
   "/images/3abfe70d-d3d6-47a2-ad04-52c40e5d53e6.svg";
 const imgVector1 =
   "/images/99c72d0f-6fbd-423d-b9da-e158065b6643.svg";
+const imgDitherBg =
+  "/images/39ffb92a-1fdd-449c-ab1e-3a137dc3469b.png";
 
 const socialItems = [
   { label: "LinkedIn", icon: imgSocialLinkedIn, href: "#" },
@@ -218,38 +220,17 @@ export function ApiPage() {
         </StaggerGroup>
       </MotionSection>
 
-      <MotionSection className="relative overflow-hidden bg-white py-20">
+      <MotionSection className="relative overflow-hidden bg-surface-soft py-24 text-center">
         <StaggerGroup>
-        <div className="absolute inset-0">
-          <Image alt="" src={imgImage64} fill className="object-cover opacity-80" />
+        <div className="absolute inset-0 mix-blend-darken">
+          <Image alt="" src={imgDitherBg} fill className="object-cover opacity-60" />
         </div>
-        <div className="relative mx-auto max-w-[1155px] text-center">
-          <div className="type-display-22">APCO</div>
-          <p className="type-display-md sm:type-display-lg mt-6 font-normal">
+        <div className="relative mx-auto max-w-4xl px-6">
+          <p className="type-body-21 font-semibold text-brand">APCO</p>
+          <p className="type-display-md sm:type-display-lg mt-6 font-normal text-brand">
             We switched to Bilby as it was the richest, most complete data source
             on what governments do
           </p>
-          <Image
-            alt=""
-            src={imgVector}
-            width={14}
-            height={14}
-            className="absolute left-[86px] top-[244px] rotate-45"
-          />
-          <Image
-            alt=""
-            src={imgVector}
-            width={14}
-            height={14}
-            className="absolute right-[-118px] top-[337px] rotate-45"
-          />
-          <Image
-            alt=""
-            src={imgVector1}
-            width={12}
-            height={12}
-            className="absolute left-1/2 top-[472px] -translate-x-1/2 rotate-90"
-          />
         </div>
         </StaggerGroup>
       </MotionSection>

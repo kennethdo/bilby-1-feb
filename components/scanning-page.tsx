@@ -5,7 +5,6 @@ import { Language, VerifiedUser, School } from "@material-symbols-svg/react/w200
 import { mainNavItems, mainSocialItems } from "@/components/nav-data";
 import { SiteHeader } from "@/components/site-header";
 import { MotionSection, StaggerGroup } from "@/components/motion-section";
-import { NoiseDotsBackground, GradientBlobBackground } from "@/components/effects";
 
 const imgImage80 =
   "/images/67ae2d1c-3de1-4dad-b38b-dd62caa6aade.png";
@@ -35,6 +34,8 @@ const imgVector35 =
   "/images/813bd170-3f4d-457e-b802-423a397dbfc5.svg";
 const imgVector1 =
   "/images/2086b9c6-6ffc-4455-9dc7-73082c0ed330.svg";
+const imgDitherBg =
+  "/images/39ffb92a-1fdd-449c-ab1e-3a137dc3469b.png";
 
 const featureCards = [
   {
@@ -115,7 +116,6 @@ export function ScanningPage() {
 
       <MotionSection className="relative overflow-hidden bg-white py-24">
         <StaggerGroup>
-        <NoiseDotsBackground className="z-0" opacity={0.8} />
         <div className="relative z-10 mx-auto flex max-w-[1190px] flex-col items-center gap-6 px-6 text-center">
           <p className="type-body-15">
             Analysts still waste hours manually tracking policy changes.
@@ -185,36 +185,18 @@ export function ScanningPage() {
         </StaggerGroup>
       </MotionSection>
 
-      <MotionSection className="relative overflow-hidden bg-white py-[90px]">
+      <MotionSection className="relative overflow-hidden bg-surface-soft py-24 text-center">
         <StaggerGroup>
-        <GradientBlobBackground
-          position="bottom-right"
-          className="z-0"
-          opacity={0.5}
-        />
-        <div className="relative z-10 mx-auto max-w-[1155px] text-center">
-          <div className="type-body-21 font-semibold text-brand">Ewan Smith</div>
-          <div className="relative mt-6">
-            <p className="type-display-lg leading-[1.04]">
+          <div className="absolute inset-0 mix-blend-darken">
+            <Image alt="" src={imgDitherBg} fill className="object-cover opacity-60" />
+          </div>
+          <div className="relative mx-auto max-w-4xl px-6">
+            <p className="type-body-21 font-semibold text-brand">Ewan Smith</p>
+            <p className="type-display-md sm:type-display-lg mt-6 font-normal text-brand">
               We remain astounded by the speed and scope of what Bilby provides us
               every day
             </p>
-            <Image
-              alt=""
-              src={imgVector1}
-              width={14}
-              height={14}
-              className="absolute left-[86px] -bottom-16 rotate-45"
-            />
-            <Image
-              alt=""
-              src={imgVector1}
-              width={14}
-              height={14}
-              className="absolute -right-[118px] -bottom-4 rotate-45"
-            />
           </div>
-        </div>
         </StaggerGroup>
       </MotionSection>
     </main>

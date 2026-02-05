@@ -26,10 +26,6 @@ const imgSocialInstagram =
   "/images/b6218a3a-7090-4af6-a45f-afc11bb2b1a5.svg";
 const imgSocialGithub =
   "/images/1b2cc422-f52b-4083-ab2a-b47ebf2d0a4d.svg";
-const imgDotsLeft =
-  "/images/ab6c48ab-ae00-4132-b990-f0f7036953c5.svg";
-const imgDotsRight =
-  "/images/e7286732-84b6-4b4f-b93a-535e3cd8c5cb.svg";
 
 const socialItems = [
   { label: "LinkedIn", icon: imgSocialLinkedIn, href: "#" },
@@ -91,25 +87,9 @@ export function BilbyJapanPage() {
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <div className="border border-default bg-white p-8">
               <div className="relative">
-                <div className="relative mb-6 inline-block">
-                  <Image
-                    alt=""
-                    src={imgDotsLeft}
-                    width={10}
-                    height={10}
-                    className="absolute -left-1 -top-1"
-                  />
-                  <Image
-                    alt=""
-                    src={imgDotsRight}
-                    width={10}
-                    height={10}
-                    className="absolute -right-1 -top-1"
-                  />
-                  <p className="type-mono-xs px-1 text-border">
-                    WHY BILBY
-                  </p>
-                </div>
+                <p className="type-mono-xs mb-6 text-brand-muted">
+                  WHY BILBY
+                </p>
                 <h2 className="type-jp-26 font-jp text-brand-muted">
                   目まぐるしく変化するグローバル社会における
                   <br />「政府」というリスク要因を可視化
@@ -130,25 +110,9 @@ export function BilbyJapanPage() {
             </div>
             <div className="border border-default bg-white p-8">
               <div className="relative">
-                <div className="relative mb-6 inline-block">
-                  <Image
-                    alt=""
-                    src={imgDotsLeft}
-                    width={10}
-                    height={10}
-                    className="absolute -left-1 -top-1"
-                  />
-                  <Image
-                    alt=""
-                    src={imgDotsRight}
-                    width={10}
-                    height={10}
-                    className="absolute -right-1 -top-1"
-                  />
-                  <p className="type-mono-xs px-1 text-border">
-                    BUILT FOR JAPAN
-                  </p>
-                </div>
+                <p className="type-mono-xs mb-6 text-brand-muted">
+                  BUILT FOR JAPAN
+                </p>
                 <h2 className="type-jp-26 font-jp text-brand-muted">
                   日本政府の動向に特化したモデルと、日本語に最適化された言語インテリジェンス
                 </h2>

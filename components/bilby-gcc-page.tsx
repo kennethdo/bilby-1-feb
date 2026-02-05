@@ -1,13 +1,14 @@
+"use client";
+
 import Image from "next/image";
 
 import { mainNavItems } from "@/components/nav-data";
 import { SiteHeader } from "@/components/site-header";
 import { MotionSection, StaggerGroup } from "@/components/motion-section";
+import { DitherBackground } from "@/components/dither-background";
 
 const imgImage93 =
   "/images/63757473-2697-4d36-bb47-1bcc0252988b.png";
-const imgImageDither =
-  "/images/86a5552a-e9a0-4c68-9d84-7efaa3daefd9.png";
 const imgImageHero =
   "/images/86a5552a-e9a0-4c68-9d84-7efaa3daefd9.png";
 const imgImage66 =
@@ -92,9 +93,6 @@ export function BilbyGccPage() {
 
       <MotionSection className="relative overflow-hidden bg-brand text-white">
         <StaggerGroup>
-        <div className="absolute inset-0">
-          <Image alt="" src={imgImageDither} fill className="object-cover opacity-90" />
-        </div>
         <div className="relative mx-auto grid w-full max-w-6xl gap-8 px-6 py-16 lg:grid-cols-[0.95fr_1.05fr] lg:px-10">
           <div className="relative min-h-[280px]">
             <Image alt="" src={imgImageHero} fill className="object-cover" />
@@ -177,7 +175,7 @@ export function BilbyGccPage() {
       <MotionSection className="relative overflow-hidden bg-surface-soft py-16 text-center font-arabic">
         <StaggerGroup>
         <div className="absolute inset-0">
-          <Image alt="" src={imgImage66} fill className="object-cover opacity-80" />
+          <DitherBackground />
         </div>
         <div className="relative mx-auto max-w-4xl px-6" dir="rtl">
           <p className="type-ar-25">
