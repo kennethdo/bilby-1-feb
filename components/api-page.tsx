@@ -86,11 +86,6 @@ export function ApiPage() {
         socialItems={socialItems}
       />
 
-      <div className="type-body-sm bg-brand p-2.5 text-center uppercase leading-[1.28] text-white">
-        For more info on our quant product, please visit{" "}
-        <span className="underline">this page</span>
-      </div>
-
       <MotionSection className="mx-auto w-full max-w-[1440px] px-4 py-10 lg:py-6">
         <StaggerGroup>
         <div className="relative flex min-h-[760px] items-center overflow-hidden rounded-[8px] bg-white">
@@ -103,7 +98,7 @@ export function ApiPage() {
           />
           <div className="pointer-events-none absolute left-1/2 top-[calc(50%-32px)] h-[404px] w-[1062px] -translate-x-1/2 rounded-[181px] bg-white opacity-60 blur-[50px]" />
           <div className="relative mx-auto flex max-w-[944px] flex-col items-center gap-8 px-6 text-center">
-            <div className="type-mono-xs inline-flex items-center gap-1.5 border border-brand border-b-[1px] border-l-[0.5px] border-r-[0.5px] border-t-[0.5px] px-2 pb-1.5 pt-1">
+            <div className="type-mono-xs inline-flex items-center gap-1.5 border border-brand border-b-[1.5px] border-l-[0.75px] border-r-[0.75px] border-t-[0.75px] px-2 pb-1.5 pt-1 text-brand">
               <span className="size-[3px] rounded-[1px] bg-brand" />
               Building Agency
             </div>

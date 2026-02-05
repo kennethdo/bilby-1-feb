@@ -5,12 +5,9 @@ import { useState } from "react";
 import { Article, Forum, Campaign, Lightbulb } from "@material-symbols-svg/react/w200";
 
 import { cn } from "@/lib/utils";
-import { aboutNavItems } from "@/components/nav-data";
+import { aboutNavItems, mainSocialItems } from "@/components/nav-data";
 import { SiteHeader } from "@/components/site-header";
 import { StaggerGroup } from "@/components/motion-section";
-
-const imgNicolasLePallec =
-  "/images/f720ffcc-303c-4011-bd9e-90d5ae55a925.png";
 
 const imgImage94 =
   "/images/4f018b6c-3ed8-4f55-9c56-0d4e9f323480.png";
@@ -20,123 +17,99 @@ const imgLogo =
   "/images/2cde171c-b7a5-4670-98d6-a595ab8f6856.svg";
 const imgFrame1000003036 =
   "/images/6bda768e-f4a3-4808-b689-6a2d3ee8863f.svg";
-const imgSocialLinkedIn =
-  "/images/1c006981-7e75-4469-89c8-6f7f76054a66.svg";
-const imgSocialX =
-  "/images/ee062747-895b-4d60-b48f-04f0ad3243d7.svg";
-const imgSocialYoutube =
-  "/images/0627cb86-fdda-4924-a5a7-9a277601673f.svg";
-const imgSocialInstagram =
-  "/images/1cbcfbea-6b96-40ea-8e30-fc365bdad163.svg";
-const imgSocialGithub =
-  "/images/101ed8f7-e983-43b0-983f-cea390d15a80.svg";
 const imgLogoMark =
   "/images/679e7fab-03c1-4eac-bd10-7454330705e1.svg";
-
-const socialItems = [
-  { label: "LinkedIn", icon: imgSocialLinkedIn, href: "#" },
-  { label: "X", icon: imgSocialX, href: "#" },
-  { label: "YouTube", icon: imgSocialYoutube, href: "#" },
-  { label: "Instagram", icon: imgSocialInstagram, href: "#" },
-  { label: "GitHub", icon: imgSocialGithub, href: "#" }
-];
 
 const staffMembers = [
   {
     name: "Dr. Ryan Manuel",
-    role: "CEO & Founder",
+    role: "Founder and CEO",
     photo: "/images/staff/ryan-manuel.png",
-    description: "More than 20 years industry experience; a third-time founder who previously taught at Oxford, Australian National and Hong Kong universities, and worked for BCG and the Australian government. Holds a doctorate from Oxford, where he was a Rhodes Scholar."
+    description: "Dr Ryan Manuel has more than 20 years industry experience; a third-time founder, he previously taught at Oxford, Australian National and Hong Kong universities, and worked for BCG and the Australian government. He holds a doctorate from Oxford, where he was a Rhodes Scholar."
   },
   {
-    name: "Dr. Steve Enright-Ward",
-    role: "Chief Technology Officer",
+    name: "Dr. Stephen Enright-Ward",
+    role: "CTO",
     photo: "/images/staff/stephen-enrightward.jpg",
-    description: "Leads Bilby's technology strategy and engineering teams. Brings deep expertise in AI systems architecture, scalable data pipelines, and building production ML platforms for government intelligence."
-  },
-  {
-    name: "Simon Cartledge",
-    role: "Head of Research",
-    photo: "/images/staff/simon-cartledge.png",
-    description: "Directs Bilby's research programme, overseeing policy analysis methodology and knowledge graph development. Background in political economy and Asian government systems."
-  },
-  {
-    name: "Nicolas Le Pallec",
-    role: "Head of Engineering",
-    photo: imgNicolasLePallec,
-    description: "Oversees platform engineering and infrastructure, ensuring Bilby's systems deliver reliable, high-performance intelligence at scale across global deployments."
-  },
-  {
-    name: "David Lee",
-    role: "Senior ML Research Engineer",
-    photo: "/images/staff/david-lee.png",
-    description: "Develops and optimises Bilby's core machine learning models for document classification, sentiment analysis, and policy maturity scoring across multilingual datasets."
-  },
-  {
-    name: "Jeremy Thompson",
-    role: "Research Analyst",
-    photo: "/images/staff/jeremy-thompson.png",
-    description: "Conducts policy research and analysis, contributing to Bilby's intelligence products with expertise in regulatory landscapes and government activity monitoring."
-  },
-  {
-    name: "Carlo Taleon",
-    role: "Software Engineer",
-    photo: "/images/staff/carlo-taleon.jpeg",
-    description: "Builds and maintains Bilby's web platforms and API services, working across the full stack to deliver intuitive interfaces for complex intelligence data."
-  },
-  {
-    name: "Damian Cox",
-    role: "Solutions Architect",
-    photo: "/images/staff/damian-cox.png",
-    description: "Designs and implements client-facing deployment architectures, ensuring Bilby's platforms integrate seamlessly with enterprise and government infrastructure."
-  },
-  {
-    name: "Harvey Wen",
-    role: "Data Scientist",
-    photo: "/images/staff/harvey-wen.jpg",
-    description: "Applies statistical modelling and data analysis to extract actionable signals from government activity data, supporting Bilby's quantitative intelligence products."
-  },
-  {
-    name: "Hugh Daly",
-    role: "AI & Data Engineering",
-    photo: "/images/staff/hugh-daly.jpeg",
-    description: "Builds data pipelines and AI infrastructure that power Bilby's automated scanning and analysis of global government and regulatory sources."
-  },
-  {
-    name: "Marco Law",
-    role: "Business Development",
-    photo: "/images/staff/marco-law.png",
-    description: "Drives Bilby's commercial growth across Asia-Pacific markets, building relationships with government agencies and enterprise clients."
-  },
-  {
-    name: "Nik Takano",
-    role: "Product Design Lead",
-    photo: "/images/staff/nik-takano.png",
-    description: "Shapes the user experience of Bilby's platforms, translating complex intelligence workflows into clear, actionable interfaces for analysts and decision-makers."
-  },
-  {
-    name: "Pallav Bakshi",
-    role: "Infrastructure Engineer",
-    photo: "/images/staff/pallav-bakshi.png",
-    description: "Manages Bilby's cloud infrastructure and DevOps practices, ensuring high availability, security, and performance across production environments."
-  },
-  {
-    name: "Sam Davenport",
-    role: "ML & Quantitative Research",
-    photo: "/images/staff/sam-davenport.jpg",
-    description: "Develops quantitative models and machine learning systems for Bilby's API products, turning government activity data into structured signals for investors and analysts."
+    description: "Steve has extensive practical experience in NLP-based machine learning algorithms, and more than 10 years postdoctoral industry experience at designing AI systems to extract value from unstructured text. He holds a doctorate from Freiburg in pure mathematics."
   },
   {
     name: "Satyadev Sarma",
     role: "Head of Data",
     photo: "/images/staff/satya.jpg",
-    description: "Leads data strategy and governance, ensuring Bilby's datasets maintain completeness, accuracy, and timeliness across 38+ countries and thousands of sources."
+    description: "Satyadev is responsible for the data infrastructure at Bilby. He has 10 years of experience working at startups and large tech companies, building data and machine learning driven products. Outside of work, he is an avid gamer and cross country motorcyclist."
+  },
+  {
+    name: "David Lee",
+    role: "Head of Product",
+    photo: "/images/staff/david-lee.png",
+    description: "David, a software engineer-turned product manager at Bilby with 5+ years of experience, enjoys taking ideas all the way to something people rely on. He's motivated by curiosity and high-quality execution."
+  },
+  {
+    name: "Simon Cartledge",
+    role: "Head of Research",
+    photo: "/images/staff/simon-cartledge.png",
+    description: "Simon has lived and worked in Beijing, Hong Kong and other parts of Asia since the 1990s. A former Editor-in-Chief, Asia for the Economist Intelligence Unit, he also ran his own independent research and publishing business, Big Brains, for more than 20 years. Simon has an MA (Hons) degree in politics from the University of Edinburgh."
+  },
+  {
+    name: "Samuel Davenport",
+    role: "Senior Machine Learning Engineer",
+    photo: "/images/staff/sam-davenport.jpg",
+    description: "Machine Learning researcher and quantitative analyst with extensive experience of using statistics, AI, and large language models to extract signal from high dimensional data. He holds a doctorate from the University of Oxford in statistical machine learning."
+  },
+  {
+    name: "Damian Cox",
+    role: "Senior Data Engineer",
+    photo: "/images/staff/damian-cox.png",
+    description: "An accomplished data professional with expertise in data engineering, machine learning, and AI. He is skilled in building scalable systems, advanced data pipelines, and predictive models using Python, SQL, big data, and cloud technologies."
+  },
+  {
+    name: "Pallav Bakshi",
+    role: "Senior Data Engineer",
+    photo: "/images/staff/pallav-bakshi.png",
+    description: "Pallav is a software engineer specialising in AI agents, machine learning, and software architecture, focusing on building systems that combine automation with thoughtful design. With extensive experience across data engineering and cloud infrastructure, he's passionate about creating tools that are impactful for real-world use."
+  },
+  {
+    name: "Harvey Wen",
+    role: "Data Scientist",
+    photo: "/images/staff/harvey-wen.jpg",
+    description: "Harvey works on Quant ML team, training in-house models and analysing large-scale datasets. He specialises in machine learning applications for particle physics. Away from his desk, you'll likely catch him cooking up a steak with Tom Misch on the speakers."
+  },
+  {
+    name: "Carlo Taleon",
+    role: "Product Engineer",
+    photo: "/images/staff/carlo-taleon.jpeg",
+    description: "Carlo is a software engineer who loves building sleek web apps and exploring the latest tech. Outside of work, he's usually out with his trusty camera capturing life and saving memories."
+  },
+  {
+    name: "Hugh Daly",
+    role: "US Analyst",
+    photo: "/images/staff/hugh-daly.jpeg",
+    description: "Hugh is a former senior Congressional aide who can also develop software, models, and data systems from start to finish. He leads our US model development and research."
   },
   {
     name: "Abigail Soryal",
-    role: "Research Associate",
+    role: "Senior Analyst",
     photo: "/images/staff/abigail.jpg",
-    description: "Supports Bilby's research efforts with policy analysis, data validation, and knowledge graph curation across multiple regions and regulatory domains."
+    description: "Abigail leverages policy research experience across the United States, Europe, and Asia to distil complex policy and regulatory systems into solutions that anticipate government action and market impact."
+  },
+  {
+    name: "Jeremy Thompson",
+    role: "Senior Analyst",
+    photo: "/images/staff/jeremy-thompson.png",
+    description: "Jeremy works on both the research and business side of things. You'll most likely see him with a craft beer in hand after work, he also runs a beer distribution business."
+  },
+  {
+    name: "Marco Law",
+    role: "Analyst",
+    photo: "/images/staff/marco-law.png",
+    description: "Marco has a background in international relations and enjoys making sense of how global political systems function. Along the way, he has accumulated a wide range of knowledge about the world, not all of it equally useful."
+  },
+  {
+    name: "Nik Takano",
+    role: "Administrative Assistant",
+    photo: "/images/staff/nik-takano.png",
+    description: "Nik is our administrative person who supports our executives in office needs and admin work. Loves to travel and do outdoor activities."
   },
 ];
 
@@ -218,10 +191,11 @@ function StaffSection() {
   return (
     <section className="bg-white py-20">
       <StaggerGroup className="mx-auto w-full max-w-6xl px-6 lg:px-10">
-        <h3 className="type-display-xl">Leadership Team</h3>
+        <h3 className="type-display-xl">Staff</h3>
         <div className="mt-12 grid gap-8 lg:grid-cols-[0.5fr_1fr]">
-          <div className="sticky top-8 self-start border border-default bg-surface-tan px-1.5 pb-1.5 pt-3">
-            <div className="relative aspect-[5/6] w-full overflow-hidden border border-default bg-surface-soft">
+          {/* Mobile: Show selected staff card above the list */}
+          <div className="order-1 border border-default bg-surface-tan px-1.5 pb-1.5 pt-3 lg:sticky lg:top-8 lg:order-none lg:self-start">
+            <div className="relative aspect-[5/6] w-full max-w-[300px] overflow-hidden border border-default bg-surface-soft lg:max-w-none">
               <Image
                 alt={active.name}
                 src={active.photo}
@@ -232,12 +206,13 @@ function StaffSection() {
             <div className="mt-3 px-2 pb-2">
               <p className="type-body-13 font-medium text-brand">{active.name}</p>
               <p className="type-mono-10 text-brand-soft">{active.role}</p>
-              <p className="type-body-12 mt-2 text-brand-soft leading-[1.5]">
+              <p className="type-body-12 mt-2 leading-[1.5] text-brand-soft">
                 {active.description}
               </p>
             </div>
           </div>
-          <div className="border border-default">
+          {/* Staff list */}
+          <div className="order-2 border border-default lg:order-none">
             <div className="divide-y divide-default">
               {staffMembers.map((member, i) => {
                 const isActive = i === activeIndex;
@@ -245,14 +220,15 @@ function StaffSection() {
                   <div
                     key={member.name}
                     onMouseEnter={() => setActiveIndex(i)}
+                    onClick={() => setActiveIndex(i)}
                     className={cn(
                       "cursor-pointer transition-colors duration-200",
                       isActive && "bg-surface-soft"
                     )}
                   >
-                    <div className="type-body-12 grid grid-cols-[0.32fr_0.5fr_0.18fr] items-center gap-3 px-4 py-2.5 text-left text-brand">
-                      <span className="type-mono-10 text-brand-soft">{member.role}</span>
-                      <span>{member.name}</span>
+                    <div className="type-body-12 grid grid-cols-[0.4fr_0.5fr_0.1fr] items-center gap-2 px-3 py-2.5 text-left text-brand sm:grid-cols-[0.32fr_0.5fr_0.18fr] sm:gap-3 sm:px-4">
+                      <span className="type-mono-10 truncate text-brand-soft">{member.role}</span>
+                      <span className="truncate">{member.name}</span>
                       <span className="type-mono-10 text-right text-[rgb(var(--color-brand)/0.6)]">
                         {isActive ? "▾" : "▸"}
                       </span>
@@ -276,7 +252,7 @@ export function AboutPage() {
         navItems={aboutNavItems}
         activeLabel="About Bilby"
         navMarkSrc={imgFrame1000003036}
-        socialItems={socialItems}
+        socialItems={mainSocialItems}
       />
 
       <section className="relative overflow-hidden bg-surface-muted py-24 text-center">
@@ -336,11 +312,11 @@ export function AboutPage() {
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="size-20 overflow-hidden rounded-full bg-neutral">
-                    <Image alt="Nicolas Le Pallec" src={imgNicolasLePallec} width={80} height={80} className="size-full object-cover" />
+                    <Image alt="Dr. Stephen Enright-Ward" src="/images/staff/stephen-enrightward.jpg" width={80} height={80} className="size-full object-cover" />
                   </div>
                 <div className="type-body-15-2">
-                    <p className="font-medium text-brand">Nicolas Le Pallec</p>
-                    <p className="text-neutral">Head of Engineering</p>
+                    <p className="font-medium text-brand">Dr. Stephen Enright-Ward</p>
+                    <p className="text-neutral">CTO</p>
                   </div>
                 </div>
               </div>

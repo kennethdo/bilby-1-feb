@@ -70,9 +70,9 @@ export function BilbyGccPage() {
         </div>
         <div className="relative mx-auto w-full max-w-6xl px-6 py-16 lg:px-10 lg:py-24">
           <div className="flex flex-col items-end text-right" dir="rtl">
-            <div className="type-mono-xs inline-flex items-center gap-2 border border-brand px-3 py-2">
-              <span className="size-1 rounded-[1px] bg-brand" />
-              Building Agency
+            <div className="type-mono-xs inline-flex items-center gap-1.5 border border-brand border-b-[1.5px] border-l-[0.75px] border-r-[0.75px] border-t-[0.75px] px-2 pb-1.5 pt-1 text-brand">
+              <span className="size-[3px] rounded-[1px] bg-brand" />
+              Built for GCC
             </div>
             <div className="mt-8 space-y-6 font-arabic text-right">
               <p className="type-ar-53 [font-variation-settings:'wdth'_75]">
@@ -100,8 +100,8 @@ export function BilbyGccPage() {
             <Image alt="" src={imgImageHero} fill className="object-cover" />
           </div>
           <div className="space-y-6 font-arabic text-right" dir="rtl">
-            <div className="type-ar-12 inline-flex items-center gap-2 border border-white/70 px-3 py-2">
-              <span className="size-1 rounded-[1px] bg-white" />
+            <div className="type-ar-12 inline-flex items-center gap-1.5 border-[0.75px] border-b-[1.5px] border-white/30 px-2 pb-1.5 pt-1 text-white">
+              <span className="size-[3px] rounded-[1px] bg-white" />
               لماذا BILBY
             </div>
             <h2 className="type-ar-42">
@@ -128,8 +128,8 @@ export function BilbyGccPage() {
               <Image alt="" src={imgFeatureImage} fill className="object-cover" />
             </div>
             <div className="bg-surface-ghost p-8 font-arabic text-right" dir="rtl">
-              <div className="type-ar-12 inline-flex items-center gap-2 border border-brand px-3 py-2">
-                <span className="size-1 rounded-[1px] bg-brand" />
+              <div className="type-ar-12 inline-flex items-center gap-1.5 border border-brand border-b-[1.5px] border-l-[0.75px] border-r-[0.75px] border-t-[0.75px] px-2 pb-1.5 pt-1 text-brand">
+                <span className="size-[3px] rounded-[1px] bg-brand" />
                 المزايا الرئيسية
               </div>
               <h3 className="type-ar-44 mt-4">

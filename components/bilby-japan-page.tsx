@@ -68,9 +68,9 @@ export function BilbyJapanPage() {
           <div className="border-x border-grid" />
         </div>
         <div className="relative mx-auto w-full max-w-6xl px-6 py-16 lg:px-10 lg:py-24">
-          <div className="type-mono-xs inline-flex items-center gap-2 border border-brand px-3 py-2">
-            <span className="size-1 rounded-[1px] bg-brand" />
-            Building Agency
+          <div className="type-mono-xs inline-flex items-center gap-1.5 border border-brand border-b-[1.5px] border-l-[0.75px] border-r-[0.75px] border-t-[0.75px] px-2 pb-1.5 pt-1 text-brand">
+            <span className="size-[3px] rounded-[1px] bg-brand" />
+            Built for Japan
           </div>
           <div className="mt-8 grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <h1 className="type-jp-38 text-pretty font-jp">

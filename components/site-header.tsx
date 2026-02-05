@@ -42,23 +42,26 @@ export function SiteHeader({
         <Link href="/" className="flex min-w-[106px] items-center px-4 py-3">
           <Image alt="Bilby logo" src={logoSrc} width={74} height={20} priority />
         </Link>
-        <nav className="hidden flex-1 items-center border-l border-muted px-6 lg:flex">
-          <div className="type-body-12 flex items-center gap-7 uppercase">
-            {navItems.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className={cn(
-                  "whitespace-nowrap text-brand",
-                  hoverBase,
-                  "hover:opacity-70",
-                  activeLabel === item.label &&
-                    "border-b-[1.4px] border-brand"
-                )}
-              >
-                {item.label}
-              </Link>
-            ))}
+        <nav className="hidden flex-1 items-center border-l border-muted px-10 lg:flex">
+          <div className="flex items-center gap-7">
+            {navItems.map((item) => {
+              const isActive = activeLabel === item.label;
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={cn(
+                    "whitespace-nowrap pb-0.5 text-[12px] uppercase tracking-[0.01em] text-brand transition-all duration-150",
+                    "border-b-[1.4px] border-transparent",
+                    "hover:border-brand hover:font-semibold",
+                    isActive && "border-brand"
+                  )}
+                  style={{ fontFamily: "var(--font-mono), monospace" }}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
             {navMarkSrc ? (
               <Image alt="" src={navMarkSrc} width={22} height={11} />
             ) : null}

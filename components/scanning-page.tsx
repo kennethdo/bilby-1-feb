@@ -2,9 +2,10 @@ import Image from "next/image";
 import { Fragment } from "react";
 import { Language, VerifiedUser, School } from "@material-symbols-svg/react/w200";
 
-import { mainNavItems } from "@/components/nav-data";
+import { mainNavItems, mainSocialItems } from "@/components/nav-data";
 import { SiteHeader } from "@/components/site-header";
 import { MotionSection, StaggerGroup } from "@/components/motion-section";
+import { NoiseDotsBackground, GradientBlobBackground } from "@/components/effects";
 
 const imgImage80 =
   "/images/67ae2d1c-3de1-4dad-b38b-dd62caa6aade.png";
@@ -22,16 +23,6 @@ const imgLogo =
   "/images/6ae43774-8782-4482-b744-dc80ceff7b5f.svg";
 const imgFrame1000003036 =
   "/images/84a5fa6a-720f-4d32-b965-d33d2c7a0f44.svg";
-const imgSocialLinkedIn =
-  "/images/58cddc74-2fe7-43a7-8fc6-6af89da9493b.svg";
-const imgSocialX =
-  "/images/278018a2-ce1b-49a3-9637-ef5438292346.svg";
-const imgSocialYoutube =
-  "/images/8e6eae6f-1b8f-43c6-8c5f-df9b1dcb47b4.svg";
-const imgSocialInstagram =
-  "/images/0113247a-d2f4-4136-b135-aa4932a871e7.svg";
-const imgSocialGithub =
-  "/images/59fbced6-1f2c-4955-b9cb-7f0fd4122c9e.svg";
 const imgVector =
   "/images/b7bdd235-a54b-482d-8992-c3b8c1a40be2.svg";
 const imgGlobe1 =
@@ -44,14 +35,6 @@ const imgVector35 =
   "/images/813bd170-3f4d-457e-b802-423a397dbfc5.svg";
 const imgVector1 =
   "/images/2086b9c6-6ffc-4455-9dc7-73082c0ed330.svg";
-
-const socialItems = [
-  { label: "LinkedIn", icon: imgSocialLinkedIn, href: "#" },
-  { label: "X", icon: imgSocialX, href: "#" },
-  { label: "YouTube", icon: imgSocialYoutube, href: "#" },
-  { label: "Instagram", icon: imgSocialInstagram, href: "#" },
-  { label: "GitHub", icon: imgSocialGithub, href: "#" }
-];
 
 const featureCards = [
   {
@@ -85,7 +68,7 @@ export function ScanningPage() {
         navItems={mainNavItems}
         activeLabel="Scanning"
         navMarkSrc={imgFrame1000003036}
-        socialItems={socialItems}
+        socialItems={mainSocialItems}
       />
 
       <MotionSection className="relative overflow-hidden bg-surface-muted lg:h-[750px]">
@@ -132,10 +115,8 @@ export function ScanningPage() {
 
       <MotionSection className="relative overflow-hidden bg-white py-24">
         <StaggerGroup>
-        <div className="absolute inset-0">
-          <Image alt="" src={imgImage54} fill className="object-cover opacity-50" />
-        </div>
-        <div className="relative mx-auto flex max-w-[1190px] flex-col items-center gap-6 px-6 text-center">
+        <NoiseDotsBackground className="z-0" opacity={0.8} />
+        <div className="relative z-10 mx-auto flex max-w-[1190px] flex-col items-center gap-6 px-6 text-center">
           <p className="type-body-15">
             Analysts still waste hours manually tracking policy changes.
           </p>
@@ -204,9 +185,14 @@ export function ScanningPage() {
         </StaggerGroup>
       </MotionSection>
 
-      <MotionSection className="bg-white py-[90px]">
+      <MotionSection className="relative overflow-hidden bg-white py-[90px]">
         <StaggerGroup>
-        <div className="relative mx-auto max-w-[1155px] text-center">
+        <GradientBlobBackground
+          position="bottom-right"
+          className="z-0"
+          opacity={0.5}
+        />
+        <div className="relative z-10 mx-auto max-w-[1155px] text-center">
           <div className="type-body-21 font-semibold text-brand">Ewan Smith</div>
           <div className="relative mt-6">
             <p className="type-display-lg leading-[1.04]">

@@ -1,13 +1,15 @@
 "use client";
 
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { Accordion } from "@base-ui/react";
-import { motion, useReducedMotion } from "motion/react";
+import { motion, useReducedMotion, useInView } from "motion/react";
 import { Add, ArrowForward, AccountBalance, Payments } from "@material-symbols-svg/react/w200";
 
 import { cn } from "@/lib/utils";
 import { SiteHeader } from "@/components/site-header";
-import { mainNavItems } from "@/components/nav-data";
+import { mainNavItems, mainSocialItems } from "@/components/nav-data";
+import { GradientBlobBackground } from "@/components/effects";
 
 import heroImgGlobe from "@/hero-img-2.png";
 
@@ -35,19 +37,10 @@ const imgCardCornerRight =
   "/images/7f49d8d8-671a-40b2-ba6a-cfaee77e228c.svg";
 const imgLogo =
   "/images/52e09870-c954-44d7-9261-71ad8b36269d.svg";
-const imgSocialLinkedIn =
-  "/images/bd5bd585-5e35-4784-8003-cda38372ff1f.svg";
-const imgSocialX =
-  "/images/aebe7771-4100-41fc-addf-779ff6b74dcc.svg";
 
 const springHover =
   "spring-transform transition-opacity duration-150 ease-out hover:-translate-y-0.5";
-const imgSocialYoutube =
-  "/images/6b499a14-7e23-4067-8fba-af02698ca362.svg";
-const imgSocialInstagram =
-  "/images/9f35e34b-eb94-4ebc-9be8-8c26422e6573.svg";
-const imgSocialGithub =
-  "/images/632df740-b6b6-4b2c-8da2-e021eb8969e0.svg";
+
 const imgMoneyIcon =
   "/images/c39a115c-2209-434d-8c02-babc6c2cc3dd.svg";
 const imgInfraIcon =
@@ -56,14 +49,6 @@ const imgFinanceIcon =
   "/images/663eee44-8f3e-44f1-b572-85b9639ba403.svg";
 
 const navItems = mainNavItems;
-
-const socialLinks = [
-  { label: "LinkedIn", icon: imgSocialLinkedIn, href: "#" },
-  { label: "X", icon: imgSocialX, href: "#" },
-  { label: "YouTube", icon: imgSocialYoutube, href: "#" },
-  { label: "Instagram", icon: imgSocialInstagram, href: "#" },
-  { label: "GitHub", icon: imgSocialGithub, href: "#" }
-];
 
 const bigButtons = [
   {
@@ -163,23 +148,101 @@ const logoRow = Array.from({ length: 5 }).map((_, index) => ({
   id: index,
   src: imgHighlightIcon
 }));
+function useCountUp(
+  target: number,
+  duration: number = 2000,
+  inView: boolean
+) {
+  const [count, setCount] = useState(0);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    if (!inView || hasAnimated.current) return;
+    hasAnimated.current = true;
+
+    const startTime = performance.now();
+    const animate = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * target));
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        setCount(target);
+      }
+    };
+    requestAnimationFrame(animate);
+  }, [inView, target, duration]);
+
+  return count;
+}
+
 function TickerValue({ value }: { value: string }) {
-  return <div className="tabular-nums">{value}</div>;
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
+
+  // Parse the numeric part and suffix (e.g., "4.3M" -> 4.3, "M")
+  const match = value.match(/^([\d.]+)(.*)$/);
+  const numericPart = match ? parseFloat(match[1]) : 0;
+  const suffix = match ? match[2] : "";
+  const hasDecimal = match ? match[1].includes(".") : false;
+
+  const count = useCountUp(
+    hasDecimal ? Math.round(numericPart * 10) : numericPart,
+    1800,
+    isInView
+  );
+
+  const displayValue = hasDecimal
+    ? (count / 10).toFixed(1)
+    : count.toString();
+
+  return (
+    <div ref={ref} className="tabular-nums">
+      {displayValue}
+      {suffix}
+    </div>
+  );
 }
 
 function LogoRow() {
   return (
-    <div className="flex w-full max-w-[856px] items-center justify-between">
-      {logoRow.map((logo) => (
-        <Image
-          key={logo.id}
-          alt=""
-          src={logo.src}
-          width={65}
-          height={21}
-          className="opacity-70"
-        />
-      ))}
+    <div
+      className="relative w-full max-w-[900px] overflow-hidden"
+      style={{
+        maskImage:
+          "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+        WebkitMaskImage:
+          "linear-gradient(to right, transparent, black 10%, black 90%, transparent)"
+      }}
+    >
+      <motion.div
+        className="flex w-max items-center gap-16"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{
+          x: {
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: 20,
+            ease: "linear"
+          }
+        }}
+      >
+        {/* Duplicate logos for seamless loop */}
+        {[...logoRow, ...logoRow].map((logo, index) => (
+          <Image
+            key={`${logo.id}-${index}`}
+            alt=""
+            src={logo.src}
+            width={65}
+            height={21}
+            className="shrink-0 opacity-70"
+          />
+        ))}
+      </motion.div>
     </div>
   );
 }
@@ -203,7 +266,7 @@ export function HeroSection() {
         navItems={navItems}
         activeLabel="Home"
         navMarkSrc={imgFrame1000003036}
-        socialItems={socialLinks}
+        socialItems={mainSocialItems}
       />
 
       <div className="overflow-hidden rounded-lg bg-surface-card">
@@ -239,7 +302,7 @@ export function HeroSection() {
               </a>
               <a
                 className={cn(
-                  "type-mono-xs rounded-[1000px] bg-brand px-[18px] py-3 text-inverse",
+                  "type-mono-xs bg-brand px-[18px] py-3 text-inverse",
                   springHover,
                   "hover:opacity-80"
                 )}
@@ -282,7 +345,7 @@ export function HeroSection() {
                 </a>
                 <a
                   className={cn(
-                    "type-mono-xs rounded-[1000px] bg-brand px-[18px] py-3 text-inverse",
+                    "type-mono-xs bg-brand px-[18px] py-3 text-inverse",
                     springHover,
                     "hover:opacity-80"
                   )}
@@ -296,11 +359,11 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="flex gap-1">
+      <div className="grid grid-cols-1 gap-1 sm:grid-cols-2 lg:flex lg:flex-row">
         {bigButtons.map((item, index) => (
           <article
             key={`${item.label}-${index}`}
-            className="relative flex h-[188px] w-[357px] shrink-0 flex-col justify-between bg-white px-6 py-7 text-brand"
+            className="relative flex h-[188px] flex-col justify-between bg-white px-6 py-7 text-brand lg:w-[357px] lg:shrink-0"
           >
             <div className="type-mono-xs leading-[16px]">
               {item.label}
@@ -311,8 +374,8 @@ export function HeroSection() {
             <item.Icon className="absolute right-6 top-7 size-6 text-brand" />
           </article>
         ))}
-        <article className="flex w-[452px] shrink-0 flex-col gap-20 rounded-lg bg-brand px-6 py-7 text-inverse">
-          <p className="type-body-sm font-medium uppercase leading-[1.2]">
+        <article className="flex flex-col gap-10 bg-brand px-6 py-7 text-inverse sm:col-span-2 sm:gap-20 lg:w-[452px] lg:shrink-0">
+          <p className="type-body-sm font-medium uppercase leading-[1.2] font-mono">
             {bigButtonCta.label}
           </p>
           <p className="type-body-sm max-w-[200px] leading-[1.2]">
@@ -375,7 +438,7 @@ export function HighlightsSection() {
               <div className="type-stat font-extralight">
                 <TickerValue value={item.value} />
               </div>
-              <div className="type-mono-13">
+              <div className="type-mono-14">
                 {item.title}
               </div>
               <p className="type-body-13 leading-[1.2]">
@@ -523,16 +586,20 @@ export function PillarsSection() {
                     className="py-3"
                   >
                     <Accordion.Header>
-                      <Accordion.Trigger className="type-display-22 group flex w-full items-center justify-between text-left text-brand-strong spring-transform transition-opacity duration-150 ease-out hover:-translate-x-0.5 hover:opacity-90">
+                      <Accordion.Trigger className="type-display-24 group flex w-full cursor-pointer items-center justify-between text-left text-brand-strong">
                         {item.title}
                         <Add
                           aria-hidden
-                          className="ml-4 size-5 text-brand-strong transition-transform duration-150 ease-out group-data-[state=open]:rotate-45"
+                          className="ml-4 size-5 text-brand-strong transition-transform duration-300 ease-out group-data-[panel-open]:rotate-45"
                         />
                       </Accordion.Trigger>
                     </Accordion.Header>
-                    <Accordion.Panel className="type-body pt-3 leading-[1.6] text-brand-muted">
-                      {item.body}
+                    <Accordion.Panel className="grid text-brand-muted transition-[grid-template-rows] duration-300 ease-out data-[open]:grid-rows-[1fr] grid-rows-[0fr]">
+                      <div className="overflow-hidden">
+                        <div className="type-body pb-1 pt-3 leading-[1.6]">
+                          {item.body}
+                        </div>
+                      </div>
                     </Accordion.Panel>
                   </Accordion.Item>
                 ))}
@@ -583,6 +650,11 @@ export function FooterNavSection() {
       <div className="pointer-events-none absolute bottom-0 left-0 z-10 h-[300px] w-[720px] opacity-90">
         <Image alt="" src={imgFooterVector} fill className="object-contain" />
       </div>
+      <GradientBlobBackground
+        position="bottom-right"
+        className="z-10"
+        opacity={0.7}
+      />
       <div className="relative z-20 h-full w-full px-6 pb-12 pt-[51px] lg:px-[49px] lg:pb-16">
         <div className="flex flex-wrap gap-16 text-ink">
           {footerNav.map((column) => (

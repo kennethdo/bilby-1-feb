@@ -2,7 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import {
   DM_Sans,
-  IBM_Plex_Mono,
+  JetBrains_Mono,
   Noto_Sans_Arabic,
   Noto_Sans_JP,
   Noto_Serif_JP,
@@ -16,9 +16,8 @@ const workSans = Work_Sans({
   display: "swap"
 });
 
-const ibmPlexMono = IBM_Plex_Mono({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
   variable: "--font-mono",
   display: "swap"
 });
@@ -62,7 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body
-        className={`${workSans.variable} ${ibmPlexMono.variable} ${spaceGrotesk.variable} ${dmSans.variable} ${notoSansJp.variable} ${notoSerifJp.variable} ${notoSansArabic.variable} bg-surface text-brand-strong antialiased`}
+        className={`${workSans.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} ${dmSans.variable} ${notoSansJp.variable} ${notoSerifJp.variable} ${notoSansArabic.variable} bg-surface text-brand-strong antialiased`}
       >
         {children}
       </body>

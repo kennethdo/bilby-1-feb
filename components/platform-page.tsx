@@ -4,7 +4,8 @@ import { Dashboard, Automation, SmartToy, Extension, Database } from "@material-
 import { cn } from "@/lib/utils";
 import { SiteHeader } from "@/components/site-header";
 import { MotionSection, StaggerGroup } from "@/components/motion-section";
-import { mainNavItems } from "@/components/nav-data";
+import { mainNavItems, mainSocialItems } from "@/components/nav-data";
+import { GradientBlobBackground } from "@/components/effects";
 
 const imgHero =
   "/images/0ff9142d-1bef-47d4-b631-3c388ede2041.png";
@@ -24,16 +25,6 @@ const imgLogo =
   "/images/9ca84669-40fd-4d3b-b1a0-3e3c167938b3.svg";
 const imgNavMark =
   "/images/f441779b-17a7-43ff-b6ad-5147185c00d6.svg";
-const imgSocialLinkedIn =
-  "/images/0b652c03-20e0-4a07-8b9c-e992d6290b85.svg";
-const imgSocialX =
-  "/images/69148a19-30fa-43e4-ba43-ccfb0cb70398.svg";
-const imgSocialYoutube =
-  "/images/4d7b6ba0-e212-4038-acb0-cd9586454eda.svg";
-const imgSocialInstagram =
-  "/images/48624408-d1fe-4e1a-a719-6b9099eac032.svg";
-const imgSocialGithub =
-  "/images/cc942677-5df9-4659-b6a0-104bc87b5250.svg";
 const imgCapabilityIcon1 =
   "/images/7aeb8978-ee64-4136-8c6f-05c44dbbfe5b.svg";
 const imgCapabilityIcon2 =
@@ -54,14 +45,6 @@ const imgDotsRight =
   "/images/94ee7d35-d0d2-4bc9-9c22-6c12f4facd3e.svg";
 
 const navItems = mainNavItems;
-
-const socialLinks = [
-  { label: "LinkedIn", icon: imgSocialLinkedIn, href: "#" },
-  { label: "X", icon: imgSocialX, href: "#" },
-  { label: "YouTube", icon: imgSocialYoutube, href: "#" },
-  { label: "Instagram", icon: imgSocialInstagram, href: "#" },
-  { label: "GitHub", icon: imgSocialGithub, href: "#" }
-];
 
 const capabilityCards = [
   {
@@ -133,7 +116,7 @@ export function PlatformPage() {
         navItems={navItems}
         activeLabel="Automated Solutions"
         navMarkSrc={imgNavMark}
-        socialItems={socialLinks}
+        socialItems={mainSocialItems}
       />
 
       <MotionSection className="bg-surface-raised">
@@ -173,7 +156,12 @@ export function PlatformPage() {
         <div className="absolute inset-0 opacity-30 mix-blend-darken">
           <Image alt="" src={imgBackgroundGrid} fill className="object-cover" />
         </div>
-        <StaggerGroup className="relative mx-auto w-full max-w-6xl px-6 py-20 lg:px-10 lg:py-24">
+        <GradientBlobBackground
+          position="bottom-left"
+          className="z-10"
+          opacity={0.5}
+        />
+        <StaggerGroup className="relative z-20 mx-auto w-full max-w-6xl px-6 py-20 lg:px-10 lg:py-24">
           <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
             <h2 className="type-display-md sm:type-display-lg font-normal text-brand">
               AI-powered white-label platforms for governments
@@ -186,7 +174,7 @@ export function PlatformPage() {
                 against it.
               </div>
               <div className="space-y-4">
-                <p className="type-mono-18 text-brand-strong">
+                <p className="type-mono-19 text-brand-strong">
                   AI-OS for governments
                 </p>
                 <div className="type-body space-y-4 leading-[1.6] text-brand-strong">
@@ -233,13 +221,13 @@ export function PlatformPage() {
           <h3 className="type-title mt-4 font-normal text-white">
             What our automated solutions can do
           </h3>
-          <div className="mt-10 grid gap-8 lg:grid-cols-5">
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 lg:gap-0">
             {capabilityCards.map((card, index) => (
               <div
                 key={card.title}
                 className={cn(
                   "space-y-7 px-4 py-8 text-white/80",
-                  index !== 0 && "border-l border-white/30"
+                  index !== 0 && "lg:border-l lg:border-white/30"
                 )}
               >
                 <card.Icon className="size-7 text-white" />
@@ -286,7 +274,7 @@ export function PlatformPage() {
                   height={383}
                   className="h-[240px] w-full object-cover md:h-[280px]"
                 />
-                <div className="type-mono-22 mt-4 text-brand">
+                <div className="type-mono-23 mt-4 text-brand">
                   {card.title}
                 </div>
                 <p className="type-body-sm text-body-muted mt-2">
@@ -307,7 +295,12 @@ export function PlatformPage() {
         <div className="absolute inset-0 opacity-80 mix-blend-darken">
           <Image alt="" src={imgBackgroundGrid} fill className="object-cover" />
         </div>
-        <StaggerGroup className="relative mx-auto w-full max-w-6xl px-6 pb-28 pt-32 lg:px-10">
+        <GradientBlobBackground
+          position="bottom-right"
+          className="z-10"
+          opacity={0.7}
+        />
+        <StaggerGroup className="relative z-20 mx-auto w-full max-w-6xl px-6 pb-28 pt-32 lg:px-10">
           <div className="mx-auto w-full max-w-4xl border border-default bg-white p-6 lg:p-10">
             <div className="relative border border-default p-6 lg:p-8">
               <Image

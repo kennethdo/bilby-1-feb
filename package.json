@@ -11,18 +11,23 @@
   "dependencies": {
     "@base-ui/react": "^1.1.0",
     "@material-symbols-svg/react": "^0.1.19",
+    "@react-three/fiber": "^9.5.0",
+    "@react-three/postprocessing": "^3.0.4",
     "clsx": "latest",
     "motion": "^12.26.2",
     "next": "latest",
+    "postprocessing": "^6.38.2",
     "react": "latest",
     "react-dom": "latest",
-    "tailwind-merge": "latest"
+    "tailwind-merge": "latest",
+    "three": "^0.182.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@types/three": "^0.182.0",
     "autoprefixer": "latest",
     "eslint": "latest",
     "eslint-config-next": "latest",
