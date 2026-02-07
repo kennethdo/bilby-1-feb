@@ -54,13 +54,14 @@ export function SiteHeader({
                 <Link
                   key={item.label}
                   href={item.href}
+                  data-text={item.label}
                   className={cn(
                     "whitespace-nowrap pb-0.5 text-[12px] uppercase tracking-[0.01em] text-brand transition-all duration-150",
                     "border-b-[1.4px] border-transparent",
                     "hover:border-brand hover:font-semibold",
+                    "after:invisible after:block after:h-0 after:overflow-hidden after:font-semibold after:content-[attr(data-text)]",
                     isActive && "border-brand"
                   )}
-                  style={{ fontFamily: "var(--font-mono), monospace" }}
                 >
                   {item.label}
                 </Link>
@@ -106,7 +107,6 @@ export function SiteHeader({
                     "px-6 py-4 text-[12px] uppercase tracking-[0.01em] text-brand transition-colors",
                     isActive && "bg-surface-muted font-semibold"
                   )}
-                  style={{ fontFamily: "var(--font-mono), monospace" }}
                 >
                   {item.label}
                 </Link>

@@ -14,8 +14,6 @@ import heroImgGlobe from "@/hero-img-2.png";
 
 const imgHighlights =
   "/images/639d17f6-f04b-4840-8fc0-b3e1700d8407.png";
-const imgHighlightIcon =
-  "/images/3fc23e58-83ad-46e6-b71b-53b90cdc2191.svg";
 const imgFrame1000003036 =
   "/images/a7bfd7f9-5959-4e67-b1d0-37dfcb62be86.svg";
 const imgContentImage =
@@ -56,8 +54,8 @@ const bigButtons = [
     Icon: AccountBalance
   },
   {
-    label: "Government",
-    title: "AI OS for Governments",
+    label: "Finance",
+    title: "AI for Financial Intelligence",
     Icon: Payments
   }
 ];
@@ -118,22 +116,26 @@ const pillarContent = [
   {
     title: "Expert-Led Innovation",
     body:
-      "Our founding team blends academic rigor with policy expertise. We build human-first systems that turn complex government signals into usable intelligence."
+      "Our founding team blends academic rigor with policy expertise. We build human-first systems that turn complex government signals into usable intelligence.",
+    image: imgFooterImage
   },
   {
     title: "Advanced Proprietary Technology",
     body:
-      "Custom models, multilingual pipelines, and knowledge graphs power every layer. The stack is optimized for precision, scale, and speed."
+      "Custom models, multilingual pipelines, and knowledge graphs power every layer. The stack is optimized for precision, scale, and speed.",
+    image: imgContentImage
   },
   {
     title: "Global Reach & Impact",
     body:
-      "We operate across regions and regulatory environments with trusted partners. The platform translates local policy into global action."
+      "We operate across regions and regulatory environments with trusted partners. The platform translates local policy into global action.",
+    image: imgContentImage1
   },
   {
     title: "Comprehensive Intelligence Solutions",
     body:
-      "From discovery to forecasting, Bilby delivers end-to-end intelligence. Teams move from signal detection to decision-ready insight."
+      "From discovery to forecasting, Bilby delivers end-to-end intelligence. Teams move from signal detection to decision-ready insight.",
+    image: imgContentImage2
   }
 ];
 
@@ -143,10 +145,6 @@ const footerNav = [
   { title: "Privacy policy", items: ["Privacy policy", "Terms of service", "Cookies"] }
 ];
 
-const logoRow = Array.from({ length: 5 }).map((_, index) => ({
-  id: index,
-  src: imgHighlightIcon
-}));
 function useCountUp(
   target: number,
   duration: number = 2000,
@@ -207,45 +205,6 @@ function TickerValue({ value }: { value: string }) {
   );
 }
 
-function LogoRow() {
-  return (
-    <div
-      className="relative w-full max-w-[900px] overflow-hidden"
-      style={{
-        maskImage:
-          "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-        WebkitMaskImage:
-          "linear-gradient(to right, transparent, black 10%, black 90%, transparent)"
-      }}
-    >
-      <motion.div
-        className="flex w-max items-center gap-16"
-        animate={{ x: ["0%", "-50%"] }}
-        transition={{
-          x: {
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: 20,
-            ease: "linear"
-          }
-        }}
-      >
-        {/* Duplicate logos for seamless loop */}
-        {[...logoRow, ...logoRow].map((logo, index) => (
-          <Image
-            key={`${logo.id}-${index}`}
-            alt=""
-            src={logo.src}
-            width={65}
-            height={21}
-            className="shrink-0 opacity-70"
-          />
-        ))}
-      </motion.div>
-    </div>
-  );
-}
-
 export function HeroSection() {
   const prefersReducedMotion = useReducedMotion();
   const heroInitial = prefersReducedMotion ? false : { y: 12 };
@@ -290,26 +249,6 @@ export function HeroSection() {
               <br />
               of government
             </motion.h1>
-            <motion.div
-              initial={heroInitial}
-              animate={heroAnimate}
-              transition={{ duration: 0.2, ease: "easeOut", delay: 0.1 }}
-              className="flex flex-wrap gap-3"
-            >
-              <a className={heroCtaGhost} href="#">
-                Talk to us
-              </a>
-              <a
-                className={cn(
-                  "type-mono-xs bg-brand px-[18px] py-3 text-inverse",
-                  springHover,
-                  "hover:opacity-80"
-                )}
-                href="#"
-              >
-                Learn More
-              </a>
-            </motion.div>
           </div>
 
           <div className="relative h-full min-h-[560px] self-stretch">
@@ -344,7 +283,7 @@ export function HeroSection() {
                 </a>
                 <a
                   className={cn(
-                    "type-mono-xs bg-brand px-[18px] py-3 text-inverse",
+                    "type-body-sm bg-[#122c5f] rounded-[1000px] px-[18px] py-3 uppercase text-[#f2f2f2]",
                     springHover,
                     "hover:opacity-80"
                   )}
@@ -364,7 +303,7 @@ export function HeroSection() {
             key={`${item.label}-${index}`}
             className="relative flex h-[188px] flex-col justify-between bg-white px-6 py-7 text-brand lg:w-[357px] lg:shrink-0"
           >
-            <div className="type-mono-xs leading-[16px]">
+            <div className="type-body-sm font-medium uppercase leading-[16px]">
               {item.label}
             </div>
             <p className="type-body-15 max-w-[200px] leading-[1.2]">
@@ -373,8 +312,8 @@ export function HeroSection() {
             <item.Icon className="absolute right-6 top-7 size-6 text-brand" />
           </article>
         ))}
-        <article className="flex flex-col gap-10 bg-brand px-6 py-7 text-inverse sm:col-span-2 sm:gap-20 lg:w-[452px] lg:shrink-0">
-          <p className="type-body-sm font-medium uppercase leading-[1.2] font-mono">
+        <article className="flex flex-col gap-10 bg-[#254583] rounded-[8px] px-6 py-7 text-[#f2f2f2] sm:col-span-2 sm:gap-20 lg:w-[452px] lg:shrink-0">
+          <p className="type-body-sm font-medium uppercase leading-[1.2]">
             {bigButtonCta.label}
           </p>
           <p className="type-body-sm max-w-[200px] leading-[1.2]">
@@ -413,15 +352,6 @@ export function HighlightsSection() {
               Trusted by Government Agencies and Fortune 500 Companies
             </p>
           </motion.div>
-          <motion.div
-            initial={highlightInitial}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.2, ease: "easeOut", delay: 0.05 }}
-            viewport={{ once: true, amount: 0.5 }}
-            className="pt-5"
-          >
-            <LogoRow />
-          </motion.div>
         </div>
 
         <div className="mt-24 grid grid-cols-2 gap-10 lg:grid-cols-4">
@@ -437,7 +367,7 @@ export function HighlightsSection() {
               <div className="type-stat font-extralight">
                 <TickerValue value={item.value} />
               </div>
-              <div className="type-mono-14">
+              <div className="type-body-sm font-medium uppercase">
                 {item.title}
               </div>
               <p className="type-body-13 leading-[1.2]">
@@ -462,7 +392,7 @@ export function StatementStripSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.6 }}
-          className="type-mono-19 text-center text-brand-strong"
+          className="type-display-20 text-center uppercase text-brand-strong"
         >
           Transforming government activity into predictive intelligence
         </motion.p>
@@ -547,6 +477,8 @@ export function ContentBlocksSection() {
 
 export function PillarsSection() {
   const prefersReducedMotion = useReducedMotion();
+  const [activeIndex, setActiveIndex] = useState(0);
+  const active = pillarContent[activeIndex];
 
   return (
     <section className="bg-white">
@@ -572,37 +504,34 @@ export function PillarsSection() {
                 AI-powered government intelligence.
               </p>
             </div>
-            <div className="border-t border-default">
-              <Accordion.Root
-                className="divide-y divide-default"
-                defaultValue={[]}
-                multiple={false}
-              >
-                {pillarContent.map((item) => (
-                  <Accordion.Item
+            <div className="divide-y divide-default border-y border-default">
+              {pillarContent.map((item, i) => {
+                const isActive = i === activeIndex;
+                return (
+                  <div
                     key={item.title}
-                    value={item.title}
-                    className="py-3"
+                    onMouseEnter={() => setActiveIndex(i)}
+                    onClick={() => setActiveIndex(i)}
+                    className={cn(
+                      "cursor-pointer py-3 transition-colors duration-200",
+                      isActive && "bg-surface-soft"
+                    )}
                   >
-                    <Accordion.Header>
-                      <Accordion.Trigger className="type-display-20 sm:type-display-22 group flex w-full cursor-pointer items-center justify-between text-left text-brand-strong">
+                    <div className="flex w-full items-center justify-between px-2">
+                      <span className="type-display-20 sm:type-display-22 text-brand-strong">
                         {item.title}
-                        <Add
-                          aria-hidden
-                          className="ml-4 size-5 text-brand-strong transition-transform duration-300 ease-out group-data-[panel-open]:rotate-45"
-                        />
-                      </Accordion.Trigger>
-                    </Accordion.Header>
-                    <Accordion.Panel className="grid text-brand-muted transition-[grid-template-rows] duration-300 ease-out data-[open]:grid-rows-[1fr] grid-rows-[0fr]">
-                      <div className="overflow-hidden">
-                        <div className="type-body pb-1 pt-3 leading-[1.6]">
-                          {item.body}
-                        </div>
-                      </div>
-                    </Accordion.Panel>
-                  </Accordion.Item>
-                ))}
-              </Accordion.Root>
+                      </span>
+                      <Add
+                        aria-hidden
+                        className={cn(
+                          "ml-4 size-5 shrink-0 text-brand-strong transition-transform duration-300 ease-out",
+                          isActive && "rotate-45"
+                        )}
+                      />
+                    </div>
+                  </div>
+                );
+              })}
             </div>
             <a
               className={cn(
@@ -620,14 +549,25 @@ export function PillarsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2, ease: "easeOut", delay: 0.05 }}
             viewport={{ once: true, amount: 0.4 }}
-            className="relative aspect-[4/3] w-full overflow-hidden bg-surface-card"
+            className="flex flex-col"
           >
-            <Image
-              alt=""
-              src={imgFooterImage}
-              fill
-              className="object-cover"
-            />
+            <div className="relative aspect-[4/3] w-full overflow-hidden bg-surface-card">
+              <Image
+                key={active.image}
+                alt=""
+                src={active.image}
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="mt-4">
+              <p className="type-body-sm font-medium text-brand-strong">
+                {active.title}
+              </p>
+              <p className="type-body-sm mt-2 leading-[1.6] text-brand-muted">
+                {active.body}
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>

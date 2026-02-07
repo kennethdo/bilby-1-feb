@@ -281,52 +281,6 @@ export function AboutPage() {
         </StaggerGroup>
       </section>
 
-      <section className="bg-surface-100 border-t border-black/10">
-        <StaggerGroup>
-          <div className="mx-auto flex h-[165px] w-full max-w-[1440px] items-center px-6 lg:px-[178px]">
-          <h2 className="type-display-xl">
-              Technical Info
-            </h2>
-          </div>
-          <div className="relative overflow-hidden bg-surface-panel py-12">
-            <div
-              className="pointer-events-none absolute inset-0 opacity-70"
-              style={{
-                backgroundImage:
-                  "linear-gradient(90deg, rgba(255,255,255,0.65) 50%, rgba(242,242,242,1) 50%), linear-gradient(rgba(255,255,255,0.65) 50%, rgba(242,242,242,1) 50%)",
-                backgroundSize: "180px 180px"
-              }}
-            />
-            <div className="relative mx-auto max-w-[720px] border border-muted bg-white p-10">
-              <div className="absolute -left-[13.9px] -top-[13.9px] size-[26.9px] rotate-45">
-                <span className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-brand" />
-                <span className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-brand" />
-              </div>
-              <div className="absolute -bottom-[13.9px] -right-[13.9px] size-[26.9px] rotate-45">
-                <span className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-brand" />
-                <span className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-brand" />
-              </div>
-              <div className="space-y-6">
-                <p className="type-title text-brand">
-                  Technical white paper here
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="size-20 overflow-hidden rounded-full bg-neutral">
-                    <Image alt="Dr. Stephen Enright-Ward" src="/images/staff/stephen-enrightward.jpg" width={80} height={80} className="size-full object-cover" />
-                  </div>
-                <div className="type-body-15-2">
-                    <p className="font-medium text-brand">Dr. Stephen Enright-Ward</p>
-                    <p className="text-neutral">CTO</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </StaggerGroup>
-      </section>
-
-      <StaffSection />
-
       <section className="bg-surface-muted py-20">
         <StaggerGroup className="mx-auto w-full max-w-6xl px-6 lg:px-10">
           <p className="type-mono-10 uppercase tracking-wider text-brand-soft">
@@ -366,6 +320,8 @@ export function AboutPage() {
           </div>
         </StaggerGroup>
       </section>
+
+      <StaffSection />
 
       <section className="bg-white py-20">
         <StaggerGroup className="mx-auto w-full max-w-6xl px-6 lg:px-10">
