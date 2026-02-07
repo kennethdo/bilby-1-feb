@@ -258,9 +258,9 @@ export function PlatformPage() {
                 key={card.title}
                 className="relative border border-strong bg-surface-subtle p-6"
               >
-                <div className="absolute left-2 top-2 size-2">
-                  <div className="h-2 w-2 border border-strong" />
-                </div>
+                <svg className="absolute left-2 top-2" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" y="0.5" width="7" height="7" stroke="rgb(var(--color-border-strong))" strokeWidth="1" />
+                </svg>
                 <Image
                   alt=""
                   src={card.image}

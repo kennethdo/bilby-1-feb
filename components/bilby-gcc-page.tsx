@@ -71,7 +71,7 @@ export function BilbyGccPage() {
         </div>
         <div className="relative mx-auto w-full max-w-6xl px-6 py-16 lg:px-10 lg:py-24">
           <div className="flex flex-col items-end text-right" dir="rtl">
-            <div className="type-mono-xs inline-flex items-center gap-1.5 border border-brand border-b-[1.5px] border-l-[0.75px] border-r-[0.75px] border-t-[0.75px] px-2 pb-1.5 pt-1 text-brand">
+            <div className="type-mono-xs inline-flex items-center gap-1.5 border border-brand border-b-[1.5px] border-l-[0.75px] border-r-[0.75px] border-t-[0.75px] bg-white/35 px-2 pb-1.5 pt-1 text-brand backdrop-blur-[3.9px]">
               <span className="size-[3px] rounded-[1px] bg-brand" />
               Built for GCC
             </div>

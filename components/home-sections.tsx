@@ -301,7 +301,7 @@ export function HeroSection() {
         {bigButtons.map((item, index) => (
           <article
             key={`${item.label}-${index}`}
-            className="relative flex h-[188px] flex-col justify-between bg-white px-6 py-7 text-brand lg:w-[357px] lg:shrink-0"
+            className="group relative flex h-[188px] flex-col justify-between bg-white px-6 py-7 text-brand transition-colors duration-200 hover:bg-brand hover:text-inverse lg:w-[357px] lg:shrink-0"
           >
             <div className="type-body-sm font-medium uppercase leading-[16px]">
               {item.label}
@@ -309,7 +309,7 @@ export function HeroSection() {
             <p className="type-body-15 max-w-[200px] leading-[1.2]">
               {item.title}
             </p>
-            <item.Icon className="absolute right-6 top-7 size-6 text-brand" />
+            <item.Icon className="absolute right-6 top-7 size-6 text-brand transition-colors duration-200 group-hover:text-inverse" />
           </article>
         ))}
         <article className="flex flex-col gap-10 bg-[#254583] rounded-[8px] px-6 py-7 text-[#f2f2f2] sm:col-span-2 sm:gap-20 lg:w-[452px] lg:shrink-0">
